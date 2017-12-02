@@ -1,7 +1,11 @@
+
 @import '~@angular/material/theming';
-@import './platform/core/theming/all-theme';
-@import './platform/markdown/markdown-theme';
-@import './platform/highlight/highlight-theme';
+@import '~@covalent/core/theming/all-theme';
+
+// (optional) Additional themes
+@import '~@covalent/markdown/markdown-theme';
+@import '~@covalent/highlight/highlight-theme';
+
 // Plus imports for other components in your app.
 
 // Include the base styles for Angular Material core. We include this here so that you only
@@ -12,7 +16,7 @@
 @include covalent-core();
 
 // Include material icons
-$mat-font-url: 'platform/core/common/styles/font/';
+$mat-font-url: '~@covalent/core/common/styles/font/';
 @include covalent-material-icons();
 
 // Include covalent utility classes

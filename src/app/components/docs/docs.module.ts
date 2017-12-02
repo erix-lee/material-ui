@@ -22,8 +22,8 @@ import { DocumentationToolsModule } from '../../documentation-tools';
 import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule,
          MatMenuModule } from '@angular/material';
 
-import { CovalentLayoutModule, CovalentMediaModule } from '../../../platform/core';
-import { CovalentHighlightModule } from '../../../platform/highlight';
+import { CovalentLayoutModule, CovalentMediaModule } from '@covalent/core';
+import { CovalentHighlightModule } from '@covalent/highlight';
 
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 

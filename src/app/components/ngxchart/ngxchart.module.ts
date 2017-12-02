@@ -12,7 +12,7 @@ import { TimelineFilterBarChartComponent } from './timeline-filter-bar-chart/tim
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { ComboChartComponent, ComboSeriesVerticalComponent } from './combo-chart';
-//import { MatSlider } from '@angular/material';
+import { MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule} from '@angular/material';
 const routes: Routes = [
   { path: 'ngxchart', component: NgxchartComponent },
 ];
@@ -20,8 +20,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     NgxChartsModule,
-    FormsModule,
-   // MatSlider,
+    FormsModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,
     RouterModule.forChild(routes)
   ],
   declarations: [NgxchartComponent, SparklineComponent,
@@ -30,6 +29,6 @@ const routes: Routes = [
     ComboSeriesVerticalComponent],
   exports: [
     RouterModule
-  ]
+  ], 
 })
 export class NgxchartModule { }

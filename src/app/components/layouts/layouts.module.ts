@@ -13,8 +13,8 @@ import { ManageListComponent } from './manage-list/manage-list.component';
 import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolbarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentStepsModule, CovalentMediaModule,
-         CovalentCommonModule } from '../../../platform/core';
-import { CovalentHighlightModule } from '../../../platform/highlight';
+         CovalentCommonModule } from '@covalent/core';
+import { CovalentHighlightModule } from '@covalent/highlight';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 

@@ -30,6 +30,24 @@ export class HomeComponent implements AfterViewInit {
       route: 'components',
       title: 'Components',
     }, {
+      color: 'teal-A700',
+      description: 'Covalent Components, Directives, Pipes, & Services',
+      icon: 'material-outline',
+      route: 'material',
+      title: 'Angular Material',
+    }, {
+      color: 'teal-A700',
+      description: 'Covalent Components, Directives, Pipes, & Services',
+      icon: 'picture_in_picture',
+      route: 'ngxtable',
+      title: 'Ngx Table',
+    }, {
+      color: 'teal-A700',
+      description: 'Covalent Components, Directives, Pipes, & Services',
+      icon: 'picture_in_picture',
+      route: 'ngxchart',
+      title: 'Ngx Chart',
+    }, {
       color: 'cyan-A700',
       description: 'Several different material design layout options for your apps',
       icon: 'view_quilt',

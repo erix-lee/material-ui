@@ -19,13 +19,13 @@ import { appRoutes, appRoutingProviders } from './app.routes';
 
 import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatTabsModule,
          MatToolbarModule, MatGridListModule, MatTooltipModule } from '@angular/material';
-
+         
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
-         CovalentMediaModule } from '../platform/core';
-import { CovalentHighlightModule } from '../platform/highlight';
-import { CovalentHttpModule } from '../platform/http';
-import { CovalentMarkdownModule } from '../platform/markdown';
-import { CovalentDynamicFormsModule } from '../platform/dynamic-forms';
+         CovalentMediaModule } from '@covalent/core';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentHttpModule } from '@covalent/http';
+import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 

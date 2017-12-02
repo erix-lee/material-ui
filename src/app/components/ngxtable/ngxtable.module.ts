@@ -65,12 +65,12 @@ import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuMo
 import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
   CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
   CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-  CovalentMessageModule, CovalentVirtualScrollModule } from '../../../platform/core';
-import { CovalentHighlightModule } from '../../../platform/highlight';
-import { CovalentMarkdownModule } from '../../../platform/markdown';
-import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
-import { CovalentCodeEditorModule } from '../../../../node_modules/@covalent/code-editor';
-import { CovalentTextEditorModule } from '../../../../node_modules/@covalent/text-editor';
+  CovalentMessageModule, CovalentVirtualScrollModule } from '@covalent/core';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import { CovalentCodeEditorModule } from '@covalent/code-editor';
+import { CovalentTextEditorModule } from '@covalent/text-editor';
 
 import { DocumentationToolsModule } from '../../documentation-tools';
 

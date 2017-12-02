@@ -6,7 +6,7 @@ import { ToolbarComponent } from './toolbar.component';
 
 import { MatButtonModule, MatListModule, MatIconModule, MatMenuModule } from '@angular/material';
 
-import { CovalentMenuModule, CovalentNotificationsModule } from '../../../platform/core';
+import { CovalentMenuModule, CovalentNotificationsModule } from '@covalent/core';
 
 @NgModule({
   imports: [

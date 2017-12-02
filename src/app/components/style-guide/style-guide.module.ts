@@ -18,8 +18,8 @@ import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatToolba
          MatTooltipModule, MatProgressBarModule } from '@angular/material';
 
 import { CovalentLayoutModule, CovalentMediaModule, CovalentSearchModule, CovalentPagingModule,
-         CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '../../../platform/core';
-import { CovalentHighlightModule } from '../../../platform/highlight';
+         CovalentExpansionPanelModule, CovalentDialogsModule, CovalentMessageModule } from '@covalent/core';
+import { CovalentHighlightModule } from '@covalent/highlight';
 
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 

@@ -155,7 +155,7 @@ function multiFormat(value) {
 
 })
 export class NgxchartComponent implements OnInit {
-
+  
   version = "1";
   theme = 'dark';
   chartType: string;
@@ -345,6 +345,7 @@ export class NgxchartComponent implements OnInit {
       plotData: this.generatePlotData(),
       treemap
     });
+    console.info(this.chartGroups)
 
     this.treemapProcess();
 
@@ -366,8 +367,8 @@ export class NgxchartComponent implements OnInit {
   }
 
   ngOnInit() {
-    const state = this.location.path(true);
-    this.selectChart(state.length ? state : 'bar-vertical');
+
+    this.selectChart('bar-vertical');
 
     setInterval(this.updateData.bind(this), 1000);
 
@@ -501,8 +502,8 @@ export class NgxchartComponent implements OnInit {
   }
 
   selectChart(chartSelector) {
-    this.chartType = chartSelector = chartSelector.replace('/', '');
-    this.location.replaceState(this.chartType);
+    this.chartType = chartSelector ;//= chartSelector.replace('/', '');
+    //this.location.replaceState(this.chartType);
 
     for (const group of this.chartGroups) {
       this.chart = group.charts.find(x => x.selector === chartSelector);
