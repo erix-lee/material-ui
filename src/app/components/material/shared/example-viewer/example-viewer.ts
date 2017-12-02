@@ -3,6 +3,7 @@ import {MatSnackBar} from '@angular/material';
 import {ComponentPortal} from '@angular/cdk/portal';
 import 'rxjs/add/operator/first';
 
+import {EXAMPLE_COMPONENTS, LiveExample} from '@angular/material-examples';
 import {CopierService} from '../copier/copier.service';
 
 
@@ -18,7 +19,7 @@ export class ExampleViewer {
   /** String key of the currently displayed example. */
   _example: string;
 
-
+  exampleData: LiveExample;
 
   /** Whether the source for the example is being displayed. */
   showSource = false;
@@ -33,7 +34,13 @@ export class ExampleViewer {
 
   @Input()
   set example(example: string) {
-
+    if (example && EXAMPLE_COMPONENTS[example]) {
+      this._example = example;
+      this.exampleData = EXAMPLE_COMPONENTS[example];
+      this.selectedPortal = new ComponentPortal(this.exampleData.component);
+    } else {
+      console.log('MISSING EXAMPLE: ', example);
+    }
   }
 
   toggleSourceView(): void {
@@ -41,7 +48,7 @@ export class ExampleViewer {
   }
 
   exampleFileUrl(extension: string) {
-    return `/assets/examples/${this.example}-example-${extension.toLowerCase()}.html`;
+    return '';//`/assets/examples/${this.example}-example-${extension.toLowerCase()}.html`;
   }
 
   copySource(text: string) {

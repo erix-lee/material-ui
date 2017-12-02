@@ -40,7 +40,7 @@ export class ComponentViewer {
                 this.sections.delete('examples');
 
           } else {
-            //this.router.navigate(['/components']);
+            this.router.navigate(['/material']);
           }
         });
   }
