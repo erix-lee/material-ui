@@ -1,5 +1,5 @@
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
-
+import { TdMediaService } from '@covalent/core';
 import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
 @Component({
   selector: 'app-ngxtable',
@@ -16,7 +16,7 @@ import { Location, LocationStrategy, HashLocationStrategy } from '@angular/commo
 export class NgxtableComponent implements OnInit {
 
   state:string;
-  constructor(location: Location) {
+  constructor(location: Location,public media: TdMediaService) {
     this.state = location.path(true);
   }
  

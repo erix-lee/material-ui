@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
@@ -57,18 +58,60 @@ import { CheckboxSelectionComponent } from './selection/selection-chkbox.compone
 import { MultiClickSelectionComponent } from './selection/selection-multi-click.component';
 import { CustomCheckboxSelectionComponent } from './selection/selection-chkbox-template.component';
 
+import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
+  MatSelectModule, MatToolbarModule, MatTabsModule, MatTooltipModule, MatAutocompleteModule,
+  MatProgressBarModule } from '@angular/material';
+
+import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
+  CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
+  CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
+  CovalentMessageModule, CovalentVirtualScrollModule } from '../../../platform/core';
+import { CovalentHighlightModule } from '../../../platform/highlight';
+import { CovalentMarkdownModule } from '../../../platform/markdown';
+import { CovalentDynamicFormsModule } from '../../../platform/dynamic-forms';
+import { CovalentCodeEditorModule } from '../../../../node_modules/@covalent/code-editor';
+import { CovalentTextEditorModule } from '../../../../node_modules/@covalent/text-editor';
+
+import { DocumentationToolsModule } from '../../documentation-tools';
+
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 // -- Columns
 import { ColumnToggleComponent } from './columns/column-toggle.component';
 import { ColumnStandardComponent } from './columns/column-standard.component';
 import { ColumnForceComponent } from './columns/column-force.component';
 import { ColumnFlexComponent } from './columns/column-flex.component';
 import { ColumnPinningComponent } from './columns/pinning.component';
+
+
 const routes: Routes = [
-  { path: 'ngxtable', component: NgxtableComponent } 
+  { path: 'ngxtable', component: NgxtableComponent }
 ];
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    /** Material Modules */
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatCardModule,
+    MatMenuModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonToggleModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatTabsModule,
+    MatTooltipModule,
+    MatProgressBarModule,
+    MatAutocompleteModule,
+    /** Covalent Modules */
+    CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
+    CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
+    CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
+    CovalentMessageModule, CovalentVirtualScrollModule,
+    ToolbarModule,
+ 
     NgxDatatableModule,
     RouterModule.forChild(routes)
   ],
