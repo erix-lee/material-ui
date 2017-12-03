@@ -12,8 +12,8 @@ import { Component } from '@angular/core';
           </a>
         </small>
       </h3>
-      <ngx-datatable
-        class="material"
+      <ngx-datatable 
+        class="dark"
         [rows]="rows"
         [loadingIndicator]="loadingIndicator"
         [columns]="columns"

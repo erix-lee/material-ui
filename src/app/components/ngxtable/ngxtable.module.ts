@@ -8,6 +8,23 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
+import {
+  MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
+  MatSelectModule, MatToolbarModule, MatTabsModule, MatTooltipModule, MatAutocompleteModule,
+  MatProgressBarModule
+} from '@angular/material';
+
+import {
+  CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
+  CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
+  CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
+  CovalentMessageModule, CovalentVirtualScrollModule
+} from '@covalent/core';
+
+
+import { DocumentationToolsModule } from '../../documentation-tools';
+
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 // -- Basic
 import { BasicFixedComponent } from './basic/basic-fixed.component';
@@ -58,23 +75,6 @@ import { CheckboxSelectionComponent } from './selection/selection-chkbox.compone
 import { MultiClickSelectionComponent } from './selection/selection-multi-click.component';
 import { CustomCheckboxSelectionComponent } from './selection/selection-chkbox-template.component';
 
-import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
-  MatSelectModule, MatToolbarModule, MatTabsModule, MatTooltipModule, MatAutocompleteModule,
-  MatProgressBarModule } from '@angular/material';
-
-import { CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
-  CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
-  CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
-  CovalentMessageModule, CovalentVirtualScrollModule } from '@covalent/core';
-import { CovalentHighlightModule } from '@covalent/highlight';
-import { CovalentMarkdownModule } from '@covalent/markdown';
-import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
-import { CovalentCodeEditorModule } from '@covalent/code-editor';
-import { CovalentTextEditorModule } from '@covalent/text-editor';
-
-import { DocumentationToolsModule } from '../../documentation-tools';
-
-import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 // -- Columns
 import { ColumnToggleComponent } from './columns/column-toggle.component';
 import { ColumnStandardComponent } from './columns/column-standard.component';
@@ -84,8 +84,62 @@ import { ColumnPinningComponent } from './columns/pinning.component';
 
 
 const routes: Routes = [
-  { path: 'ngxtable', component: NgxtableComponent }
-];
+  {
+    path: 'ngxtable', component: NgxtableComponent,
+
+    children: [
+      {component: BasicAutoComponent,
+      path: '',
+    },
+
+
+    {component:BasicFixedComponent ,path:'basic-fixed' },
+    {component:FullScreenComponent ,path:'full-screen'         },
+    {component:InlineEditComponent ,path:'inline-edit'          },
+    {component:VirtualScrollComponent ,path:'virtual-scroll'          },
+    {component:HorzVertScrolling ,path:'horz-vert-scrolling'          },
+    {component:MultipleTablesComponent ,path:'multiple-tables'           },
+    {component:RowDetailsComponent ,path:'row-details'          },
+    {component:ResponsiveComponent ,path:'responsive'         },
+    {component:FilterBarComponent ,path:'filter'          },
+    {component:TabsDemoComponent ,path:'hidden'           },
+    {component:LiveDataComponent ,path:'live'           },
+    {component:RxDemoComponent ,path:'rx'           },
+    {component:ContextMenuDemoComponent ,path:'contextmenu'           },
+    {component:RowCssComponent ,path:'css'           },
+    {component:DynamicHeightComponent ,path:'dynamic'           },
+    {component:FooterDemoComponent ,path:'footer'           },
+
+
+    {component:RowGroupingComponent ,path:'row-grouping'           },
+    {component:ClientPagingComponent ,path:'client-paging'           },
+    {component:ServerPagingComponent ,path:'server-paging'           },
+    {component:ServerScrollingComponent ,path:'server-scrolling'           },
+    {component:VirtualPagingComponent ,path:'virtual-paging'           },
+
+    {component:ClientSortingComponent ,path:'client-sorting'           },
+    {component:DefaultSortingComponent ,path:'default-sorting'           },
+    {component:ServerSortingComponent ,path:'server-sorting'           },
+    {component:SortingComparatorComponent ,path:'comparator-sorting'           },
+
+    {component:CellSelectionComponent ,path:'cell-selection'           },
+    {component:SingleSelectionComponent ,path:'single-selection'           },
+    {component:MultiSelectionComponent ,path:'multi-selection'           },
+    {component:MultiDisableSelectionComponent ,path:'multi-disable-selection'           },
+    {component:CheckboxSelectionComponent ,path:'chkbox-selection'           },
+    {component:CustomCheckboxSelectionComponent ,path:'chkbox-selection-template'           },
+    {component:MultiClickSelectionComponent ,path:'multi-click-selection'           },
+
+
+    {component:TemplateRefTemplatesComponent ,path:'templateref'           },
+    {component:InlineTemplatesComponent ,path:'inline'           },
+
+    {component:ColumnFlexComponent ,path:'flex'           },
+    {component:ColumnToggleComponent ,path:'toggle'           },
+    {component:ColumnStandardComponent ,path:'fixed'           },
+    {component:ColumnForceComponent ,path:'force'           },
+    {component:ColumnPinningComponent ,path:'pinning'           },]
+  }];
 @NgModule({
   imports: [
     CommonModule,
@@ -111,7 +165,7 @@ const routes: Routes = [
     CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
     CovalentMessageModule, CovalentVirtualScrollModule,
     ToolbarModule,
- 
+
     NgxDatatableModule,
     RouterModule.forChild(routes)
   ],

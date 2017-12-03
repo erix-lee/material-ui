@@ -1,6 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {Component, ElementRef, NgModule, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
-import {MatTabsModule} from '@angular/material';
+import {MatTabsModule, MatProgressBarModule,MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
+  MatSelectModule, MatToolbarModule,  MatTooltipModule, MatAutocompleteModule,MatFormFieldModule} from '@angular/material';
 import {ActivatedRoute, Params, Router, RouterModule} from '@angular/router';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
@@ -8,7 +9,7 @@ import {DocViewerModule} from '../shared/doc-viewer/doc-viewer-module';
 import {DocItem, DocumentationItems} from '../shared/documentation-items/documentation-items';
 import {TableOfContentsModule} from '../shared/table-of-contents/table-of-contents.module';
 import {ComponentPageTitle} from '../page-title/page-title';
-
+//import { ExampleModule } from '@angular/material-examples';
 
 
 @Component({
@@ -40,7 +41,7 @@ export class ComponentViewer {
                 this.sections.delete('examples');
 
           } else {
-            this.router.navigate(['/material']);
+            this.router.navigate(['.']);
           }
         });
   }
@@ -80,11 +81,14 @@ export class ComponentExamples extends ComponentOverview {}
 @NgModule({
   imports: [
     MatTabsModule,
-    
+    //ExampleModule,
     RouterModule,
     DocViewerModule,
     CommonModule,
     TableOfContentsModule,
+    MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
+    MatSelectModule, MatToolbarModule, MatTabsModule, MatTooltipModule, MatAutocompleteModule,
+    MatProgressBarModule
   ],
   exports: [ComponentViewer],
   declarations: [ComponentViewer, ComponentOverview, ComponentApi, ComponentExamples],

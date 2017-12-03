@@ -1,5 +1,5 @@
 import { Component, HostBinding, AfterViewInit } from '@angular/core';
-import { GitHubService } from '../../services';
+//import { GitHubService } from '../../services';
 
 import { fadeAnimation } from '../../app.animations';
 
@@ -32,7 +32,7 @@ export class HomeComponent implements AfterViewInit {
     }, {
       color: 'teal-A700',
       description: 'Covalent Components, Directives, Pipes, & Services',
-      icon: 'material-outline',
+      icon: 'picture_in_picture',
       route: 'material',
       title: 'Angular Material',
     }, {
@@ -95,13 +95,11 @@ export class HomeComponent implements AfterViewInit {
     },
   ];
 
-  constructor(private _gitHubService: GitHubService) {
+  constructor() {
   }
 
   ngAfterViewInit(): void {
-    this._gitHubService.queryStartCount().subscribe((starsCount: number) => {
-      this.starCount = starsCount;
-    });
+    
   }
 
 }

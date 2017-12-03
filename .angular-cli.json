@@ -8,8 +8,16 @@
       "root": "src",
       "outDir": "dist",
       "assets": [
-        { "glob": "**/*", "input": "../docs", "output": "./docs/" },
-        { "glob": "**/*", "input": "../node_modules/@covalent/code-editor/assets/monaco", "output": "./assets/monaco/" },
+        {
+          "glob": "**/*",
+          "input": "../docs",
+          "output": "./docs/"
+        },
+        {
+          "glob": "**/*",
+          "input": "../node_modules/@covalent/code-editor/assets/monaco",
+          "output": "./assets/monaco/"
+        },
         "assets",
         "platform",
         "favicon.ico"
@@ -40,9 +48,11 @@
       "config": "./protractor.conf.js"
     }
   },
-  "lint": [{
+  "lint": [
+    {
       "project": "src/tsconfig.app.json"
-    }, {
+    },
+    {
       "project": "src/tsconfig.spec.json"
     }
   ],
@@ -53,19 +63,13 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "prefixInterfaces": false,
-    "inline": {
-      "style": false,
-      "template": false
-    },
-    "spec": {
-      "class": false,
-      "component": true,
-      "directive": true,
-      "module": false,
-      "pipe": true,
-      "service": true
-    },
+
+    "class": {"spec": false},
+    "component": {"spec": false},
+    "directive": {"spec": false},
+    "module": {"spec": false},
+    "pipe": {"spec": false},
+    "service":{"spec": false},
     "serve": {
       "port": 4201,
       "host": "localhost"

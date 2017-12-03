@@ -1,6 +1,7 @@
 
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { Component, OnInit, ViewEncapsulation ,HostBinding} from '@angular/core';
+import { TdMediaService } from '@covalent/core';
+
 import * as shape from 'd3-shape';
 import * as d3 from 'd3';
 import { formatLabel } from '@swimlane/ngx-charts';
@@ -8,7 +9,7 @@ import { single, multi, bubble, generateData, generateGraph, treemap, timelineFi
 import { data as countries } from 'emoji-flags';
 import chartGroups from './chartTypes';
 import { barChart, lineChartSeries } from './combo-chart-data';
-
+import { fadeAnimation } from '../../app.animations';
 const monthName = new Intl.DateTimeFormat('en-us', { month: 'short' });
 const weekdayName = new Intl.DateTimeFormat('en-us', { weekday: 'short' });
 export let colorSets = [
@@ -148,14 +149,14 @@ function multiFormat(value) {
 @Component({
   selector: 'app-ngxchart',
 
-  providers: [Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   encapsulation: ViewEncapsulation.None,
   styleUrls: [ './ngxchart.component.scss'],
   templateUrl: './ngxchart.component.html',
-
+  animations:[fadeAnimation] 
 })
 export class NgxchartComponent implements OnInit {
-  
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
   version = "1";
   theme = 'dark';
   chartType: string;
@@ -331,7 +332,7 @@ export class NgxchartComponent implements OnInit {
     { value: 33000, name: 'Minimum' }
   ];
 
-  constructor(public location: Location) {
+  constructor(public media: TdMediaService) {
     this.mathFunction = this.getFunction();
 
     Object.assign(this, {

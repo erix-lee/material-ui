@@ -56,7 +56,6 @@ export class VirtualPagingComponent {
 
     // cache results
     // if(this.cache[this.page.pageNumber]) return;
-
     this.serverResultsService.getResults(this.page).subscribe(pagedData => {
       this.page = pagedData.page;
 

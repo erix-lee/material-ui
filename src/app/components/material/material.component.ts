@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { TdMediaService } from '@covalent/core';
+import {DocumentationItems} from './shared/documentation-items/documentation-items';
 @Component({
   selector: 'app-material',
   templateUrl: './material.component.html',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaterialComponent implements OnInit {
 
-  constructor() { }
+  constructor( public docItems: DocumentationItems,public media: TdMediaService) {
+
+  }
 
   ngOnInit() {
   }

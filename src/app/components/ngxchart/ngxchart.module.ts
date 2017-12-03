@@ -12,7 +12,18 @@ import { TimelineFilterBarChartComponent } from './timeline-filter-bar-chart/tim
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { ComboChartComponent, ComboSeriesVerticalComponent } from './combo-chart';
-import { MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule} from '@angular/material';
+import { MatButtonModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,MatIconModule} from '@angular/material';
+
+import { ToolbarModule } from '../../components/toolbar/toolbar.module';
+
+
+import { DocumentationToolsModule } from '../../documentation-tools';
+import {
+  CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
+  CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
+  CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
+  CovalentMessageModule, CovalentVirtualScrollModule
+} from '@covalent/core';
 const routes: Routes = [
   { path: 'ngxchart', component: NgxchartComponent },
 ];
@@ -20,7 +31,13 @@ const routes: Routes = [
   imports: [
     CommonModule,
     NgxChartsModule,
-    FormsModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,
+    FormsModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,MatIconModule,MatButtonModule,
+    CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
+    CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
+    CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,
+    CovalentMessageModule, CovalentVirtualScrollModule,
+    ToolbarModule,CovalentMediaModule,
+
     RouterModule.forChild(routes)
   ],
   declarations: [NgxchartComponent, SparklineComponent,

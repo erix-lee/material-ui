@@ -5,21 +5,30 @@ import {   ComponentApi,
   ComponentExamples,
   ComponentOverview,
   ComponentViewer } from './component-viewer/component-viewer';
+import { ComponentsOverviewComponent } from './overview/overview.component';
 
 const routes: Routes =[
-      { path: 'material', component: MaterialComponent },
+      { path: 'material', component: MaterialComponent,
+      children: [
+        {
+          component: ComponentsOverviewComponent,
+          path: '',
+        },
+        {
+          path: ':id',
+          component: ComponentViewer,
+          children: [
+            {path: '', redirectTo: 'api', pathMatch: 'full'},
+            {path: 'overview', component: ComponentOverview, pathMatch: 'full'},
+            {path: 'api', component: ComponentApi, pathMatch: 'full'},
+            {path: 'examples', component: ComponentExamples, pathMatch: 'full'},
+            {path: '**', redirectTo: 'overview'},
+          ],
+        },
+      ]
+     },
      
-      {
-        path: 'material/:id',
-        component: ComponentViewer,
-        children: [
-          {path: '', redirectTo: 'overview', pathMatch: 'full'},
-          {path: 'overview', component: ComponentOverview, pathMatch: 'full'},
-          {path: 'api', component: ComponentApi, pathMatch: 'full'},
-          {path: 'examples', component: ComponentExamples, pathMatch: 'full'},
-          {path: '**', redirectTo: 'overview'},
-        ],
-      },
+      
   
 ]
 

@@ -1,4 +1,7 @@
-<div class="docs-component-viewer">
+<mat-card>
+    <mat-card-title>{{componentDocItem.name}}</mat-card-title>
+    <mat-card-subtitle>{{componentDocItem.examples.length}}个例子</mat-card-subtitle>
+    <mat-divider></mat-divider>
   <nav mat-tab-nav-bar class="docs-component-viewer-tabbed-content">
     <a mat-tab-link class="docs-component-viewer-section-tab"
         *ngFor="let section of sections"
@@ -10,4 +13,5 @@
   <div class="docs-component-viewer-content">
     <router-outlet></router-outlet>
   </div>
-</div>
+
+</mat-card>
