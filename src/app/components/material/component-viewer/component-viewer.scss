@@ -25,11 +25,7 @@ app-component-viewer {
   position: relative;
   min-height: 500px;
   padding: 15px;
-  code{
-    color: #fff;
-    background: #000000;
-    padding: 10px;
-  }
+
   // Display outlet components with toc as flex and switch to
   // vertical direction on small screens
   component-overview, component-api {

@@ -27,7 +27,7 @@ export class NgxtableComponent implements OnInit {
         description: '', icon: 'picture_in_picture', route: '.', title: 'Basic Auto'
       },
       {
-        description: '', icon: 'picture_in_picture', route: 'virtual-scroll', title: '10k Rows'
+        description: '', icon: 'picture_in_picture', route: 'virtual-scroll', title: '100k Rows'
       },
       {
         description: '', icon: 'picture_in_picture', route: 'full-screen', title: 'Full Screen'
