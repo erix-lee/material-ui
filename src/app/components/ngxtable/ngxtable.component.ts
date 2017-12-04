@@ -1,16 +1,13 @@
 import { Component, HostBinding, OnInit, ViewEncapsulation } from '@angular/core';
 import { TdMediaService } from '@covalent/core';
-import { Location, LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 import { fadeAnimation } from '../../app.animations';
 @Component({
   selector: 'app-ngxtable',
  
   encapsulation: ViewEncapsulation.None,
   providers: [
-    Location, {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    }
+
   ],
   templateUrl: './ngxtable.component.html',
   styleUrls: ['./ngxtable.component.scss'],
@@ -190,13 +187,11 @@ export class NgxtableComponent implements OnInit {
     ]
   }];
 
-  constructor(location: Location, public media: TdMediaService) {
-    this.state = location.path(true);
+  constructor( public media: TdMediaService) {
+  
   }
 
-  setstate(state) {
-    this.state = state;
-  }
+
 
   version: string = "a";
 

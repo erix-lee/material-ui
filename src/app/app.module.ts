@@ -5,6 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule, TranslateService, TranslateLoader } from '@ngx-translate/core';
+import { TdLoadingService } from '@covalent/core';
 
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
@@ -21,7 +22,7 @@ import { MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuMo
          MatToolbarModule, MatGridListModule, MatTooltipModule } from '@angular/material';
          
 import { CovalentLayoutModule, CovalentExpansionPanelModule, CovalentNotificationsModule, CovalentMenuModule,
-         CovalentMediaModule } from '@covalent/core';
+         CovalentMediaModule,CovalentLoadingModule } from '@covalent/core';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentHttpModule } from '@covalent/http';
 import { CovalentMarkdownModule } from '@covalent/markdown';
@@ -56,6 +57,7 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
     MatTooltipModule,
     /** Covalent Modules */
     CovalentLayoutModule,
+    CovalentLoadingModule,
     CovalentExpansionPanelModule,
     CovalentNotificationsModule,
     CovalentMenuModule,
@@ -77,10 +79,13 @@ import { getSelectedLanguage, createTranslateLoader } from './utilities/translat
   providers: [
     appRoutingProviders,
     GitHubService,
-    InternalDocsService, {
-      // Configure LOCALE_ID depending on the language set in browser
+    TdLoadingService,
+    InternalDocsService, 
+    {
+
       provide: LOCALE_ID, useFactory: getSelectedLanguage, deps: [TranslateService],
     },
+  
     SelectivePreloadingStrategyService,
   ], // additional providers needed for this module
   entryComponents: [ ],
