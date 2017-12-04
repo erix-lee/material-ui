@@ -29,7 +29,8 @@ export class SvgViewer implements OnInit {
 
   private fetchAndInlineSvgContent(path: string): void {
     const svgAbsPath = getAbsolutePathFromSrc(path);
-    this.http.get(svgAbsPath).subscribe(svgResponse => {
+    console.info(path);
+    this.http.get(path).subscribe(svgResponse => {
       this.inlineSvgContent(svgResponse.text());
     });
   }

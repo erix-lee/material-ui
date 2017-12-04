@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatNativeDateModule } from '@angular/material';
-//import { ExampleModule } from '@angular/material-examples';
+import { ExampleModule } from '@angular/material-examples';
 import { MaterialRoutingModule } from './material-routing.module';
 import { MaterialComponent } from './material.component';
 import { ComponentViewerModule } from './component-viewer/component-viewer';
@@ -28,7 +28,7 @@ import { SvgViewerModule } from './shared/svg-viewer/svg-viewer';
 import { ComponentsOverviewComponent } from './overview/overview.component';
 @NgModule({
   imports: [
-    //ExampleModule,
+    ExampleModule,
     CommonModule, MatNativeDateModule,
     ComponentViewerModule,
     MatButtonModule,

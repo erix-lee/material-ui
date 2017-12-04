@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {Component, ElementRef, NgModule, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, NgModule, OnInit, ViewChild, ViewEncapsulation,HostBinding} from '@angular/core';
 import {MatTabsModule, MatProgressBarModule,MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
   MatSelectModule, MatToolbarModule,  MatTooltipModule, MatAutocompleteModule,MatFormFieldModule} from '@angular/material';
 import {ActivatedRoute, Params, Router, RouterModule} from '@angular/router';
@@ -9,7 +9,8 @@ import {DocViewerModule} from '../shared/doc-viewer/doc-viewer-module';
 import {DocItem, DocumentationItems} from '../shared/documentation-items/documentation-items';
 import {TableOfContentsModule} from '../shared/table-of-contents/table-of-contents.module';
 import {ComponentPageTitle} from '../page-title/page-title';
-//import { ExampleModule } from '@angular/material-examples';
+import { ExampleModule } from '@angular/material-examples';
+import { slideInDownAnimation } from '../../../app.animations';
 
 
 @Component({
@@ -17,8 +18,11 @@ import {ComponentPageTitle} from '../page-title/page-title';
   templateUrl: './component-viewer.html',
   styleUrls: ['./component-viewer.scss'],
   encapsulation: ViewEncapsulation.None,
+  animations: [slideInDownAnimation],
 })
 export class ComponentViewer {
+  @HostBinding('@routeAnimation') routeAnimation: boolean = true;
+  @HostBinding('class.td-route-animation') classAnimation: boolean = true;
   componentDocItem: DocItem;
 
   sections: Set<string> = new Set(['overview', 'api']);
@@ -81,7 +85,7 @@ export class ComponentExamples extends ComponentOverview {}
 @NgModule({
   imports: [
     MatTabsModule,
-    //ExampleModule,
+    ExampleModule,
     RouterModule,
     DocViewerModule,
     CommonModule,

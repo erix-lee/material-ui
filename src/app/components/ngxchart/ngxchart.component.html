@@ -430,7 +430,7 @@
         <span hide-gt-sm flex>Documentation</span>
         <td-toolbar flex layout="row"></td-toolbar>
     </div>
-    <div class="theme-alt">
+    <div class="theme-alt" #content>
         <div style="position: absolute; top: 50px; left: 50px; right: 50px; bottom: 50px;">
             <ngx-charts-bar-vertical *ngIf="chartType === 'bar-vertical'" class="chart-container" [view]="view" [scheme]="colorScheme"
                 [schemeType]="schemeType" [customColors]="customColors" [results]="single" [animations]="animations" [gradient]="gradient"

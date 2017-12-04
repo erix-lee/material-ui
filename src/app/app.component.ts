@@ -1,10 +1,10 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, ElementRef } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Dir } from '@angular/cdk/bidi';
 import { MatIconRegistry } from '@angular/material';
 import { TdMediaService } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
-
+import { Router, NavigationEnd } from '@angular/router';
 import { getSelectedLanguage } from './utilities/translate';
 import { getDirection } from './utilities/direction';
 
@@ -16,55 +16,71 @@ import { getDirection } from './utilities/direction';
 
 
 
-export class DocsAppComponent {
+export class DocsAppComponent implements OnInit {
+
+  ngOnInit(): void {
+    this.router.events
+      .subscribe((event) => {
+
+        if (event instanceof NavigationEnd) { // 当导航成功结束时执行
+          let divEle = this.elementRef.nativeElement.querySelector('.td-layout-nav-list-main .td-layout-nav-list-content');//获取
+
+          console.dir(divEle);
+          if (divEle) {
+
+            divEle.scrollTo(0,0);
+          }
+        }
+      });
+  }
 
   routes: Object[] = [{
-      icon: 'library_books',
-      route: 'docs',
-      title: 'Documentation',
-    }, {
-      icon: 'picture_in_picture',
-      route: 'components',
-      title: 'Components & Addons',
-	}, {
-      icon: 'picture_in_picture',
-      route: 'material',
-      title: 'Angular Material',
-	}, {
-      icon: 'picture_in_picture',
-      route: 'ngxtable',
-      title: 'Ngx Table',
-	}, {
-      icon: 'picture_in_picture',
-      route: 'ngxchart',
-      title: 'Ngx Chart',
-	  
-    }, {
-      icon: 'view_quilt',
-      route: 'layouts',
-      title: 'Layouts',
-    }, {
-      icon: 'color_lens',
-      route: 'style-guide',
-      title: 'Style Guide',
-    }, {
-      icon: 'extension',
-      route: 'design-patterns',
-      title: 'Design Patterns',
-    }, {
-      icon: 'view_carousel',
-      route: 'templates',
-      title: 'Templates',
-    },
+    icon: 'library_books',
+    route: 'docs',
+    title: 'Documentation',
+  }, {
+    icon: 'picture_in_picture',
+    route: 'components',
+    title: 'Components & Addons',
+  }, {
+    icon: 'picture_in_picture',
+    route: 'material',
+    title: 'Angular Material',
+  }, {
+    icon: 'picture_in_picture',
+    route: 'ngxtable',
+    title: 'Ngx Table',
+  }, {
+    icon: 'picture_in_picture',
+    route: 'ngxchart',
+    title: 'Ngx Chart',
+
+  }, {
+    icon: 'view_quilt',
+    route: 'layouts',
+    title: 'Layouts',
+  }, {
+    icon: 'color_lens',
+    route: 'style-guide',
+    title: 'Style Guide',
+  }, {
+    icon: 'extension',
+    route: 'design-patterns',
+    title: 'Design Patterns',
+  }, {
+    icon: 'view_carousel',
+    route: 'templates',
+    title: 'Templates',
+  },
   ];
 
   dir: string;
 
-  constructor(private _iconRegistry: MatIconRegistry,
-              private _domSanitizer: DomSanitizer,
-              private _changeDetectorRef: ChangeDetectorRef,
-              public media: TdMediaService,
-              translateService: TranslateService) {
+  constructor(private elementRef: ElementRef, private router: Router, private _iconRegistry: MatIconRegistry,
+    private _domSanitizer: DomSanitizer,
+    private _changeDetectorRef: ChangeDetectorRef,
+    public media: TdMediaService,
+    translateService: TranslateService) {
     // Set fallback language
     translateService.setDefaultLang('en');
     // Supported languages

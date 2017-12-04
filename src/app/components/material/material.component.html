@@ -6,7 +6,7 @@
   <mat-nav-list td-sidenav-content>
       <a mat-list-item [routerLink]="'.'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [tdLayoutNavListClose]="!media.query('gt-sm')">
           <mat-icon matListAvatar>
-            <docs-svg-viewer  scaleToContainer="true" src="../../../assets/icons/material.svg"></docs-svg-viewer>
+              layers
           </mat-icon>
           <h3 matLine> 全部组件</h3>
           <p matLine></p>
@@ -16,9 +16,9 @@
       <ng-template let-item let-last="last" ngFor [ngForOf]="category.items">
         <a mat-list-item [routerLink]="[item.id]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [tdLayoutNavListClose]="!media.query('gt-sm')">
           <mat-icon matListAvatar>
-            <docs-svg-viewer [attr.aria-label]="item.name" scaleToContainer="true" [src]="'../../../assets/img/components/' + item.id + '.svg'"></docs-svg-viewer>
+            <docs-svg-viewer [attr.aria-label]="item.name" scaleToContainer="true" [src]="'assets/img/components/' + item.id + '.svg'"></docs-svg-viewer>
           </mat-icon>
-          <h3 matLine> {{item.name}} </h3>
+          <h3 matLine> {{item.name}} ({{item.examples.length}})</h3>
           <p matLine> {{item.description}} </p>
         </a>
         <mat-divider *ngIf="!last" matInset></mat-divider>
@@ -34,7 +34,7 @@
     <span hide-gt-sm flex>Components &amp; Addons</span>
     <td-toolbar flex layout="row"></td-toolbar>
   </div>
-  <div class="theme-alt">
+  <div class="theme-alt" #content>
     <router-outlet></router-outlet>
 
   </div>

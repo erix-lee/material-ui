@@ -20,7 +20,7 @@ import { Component } from '@angular/core';
         [footerHeight]="50"
         [rowHeight]="getRowHeight"
         [scrollbarV]="true"
-        (page)="onPage($event)">
+        >
         <ngx-datatable-column name="Name"></ngx-datatable-column>
         <ngx-datatable-column name="Gender"></ngx-datatable-column>
         <ngx-datatable-column name="Row Height" prop="height"></ngx-datatable-column>

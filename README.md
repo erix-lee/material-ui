@@ -6,7 +6,7 @@
 [![Dependency Status](https://dependencyci.com/github/Teradata/covalent/badge)](https://dependencyci.com/github/Teradata/covalent)
 [![Coverage Status](https://coveralls.io/repos/github/Teradata/covalent/badge.svg)](https://coveralls.io/github/Teradata/covalent)
 
-<img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent/develop/src/assets/icons/covalent.svg" width="150">
+<img alt="Covalent" src="https://cdn.rawgit.com/Teradata/covalent/develop/src/app/assets/icons/covalent.svg" width="150">
 
 Covalent is a reusable UI platform from Teradata for building web applications with common standards and tooling. It is based on Angular and Material Design.
 

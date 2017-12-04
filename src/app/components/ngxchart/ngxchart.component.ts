@@ -324,7 +324,11 @@ export class NgxchartComponent implements OnInit {
   // Reference lines
   showRefLines: boolean = true;
   showRefLabels: boolean = true;
-
+  //Visable
+  dataVisable: boolean = false;
+  dimVisiable: boolean = false;
+  colorVisible: boolean = false;
+  optsVisible: boolean = false;
   // Supports any number of reference lines.
   refLines = [
     { value: 42500, name: 'Maximum' },

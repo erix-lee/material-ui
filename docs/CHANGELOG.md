@@ -292,8 +292,8 @@ After:
     Sidenav content
   </div>
   <td-layout-nav toolbarTitle="Title">
-    <button mat-icon-button td-menu-button tdLayoutToggle>
-      <mat-icon>menu</mat-icon>
+    <button md-icon-button td-menu-button tdLayoutToggle>
+      <md-icon>menu</md-icon>
     </button>
     Content
   <td-layout-nav>
@@ -304,8 +304,8 @@ OR
 
 ```html
 <td-layout-nav toolbarTitle="Title">
-  <button mat-icon-button td-menu-button (click)="somethingElse()">
-    <mat-icon>menu</mat-icon>
+  <button md-icon-button td-menu-button (click)="somethingElse()">
+    <md-icon>menu</md-icon>
   </button>
   Content
 <td-layout-nav>
@@ -331,15 +331,15 @@ After:
 
 ```html
 <td-layout-nav-list toolbarTitle="Title">
-  <button mat-icon-button td-menu-button tdLayoutToggle>
-    <mat-icon>menu</mat-icon>
+  <button md-icon-button td-menu-button tdLayoutToggle>
+    <md-icon>menu</md-icon>
   </button>
   <div td-sidenav-content [tdLayoutNavListClose]="!media.query('gt-sm')">
     Sidenav Content
   </div>
   <div td-toolbar-content>
-    <button mat-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
-      <mat-icon>arrow_back</mat-icon>
+    <button md-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
     </button>
   </div>
   Content
@@ -372,8 +372,8 @@ After:
     Sidenav Content
   </div>
   <md-toolbar>
-    <button mat-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
-      <mat-icon>arrow_back</mat-icon>
+    <button md-icon-button tdLayoutManageListOpen [hideWhenOpened]="true">
+      <md-icon>arrow_back</md-icon>
     </button>
   </md-toolbar>
   Content
@@ -392,8 +392,8 @@ e.g.
   <td-layout-nav toolbarTitle="Title">
     <!-- [tdLayoutToggle] makes this button's click toggle the td-layout sidenav -->
     <!-- [td-menu-button] is used to position this button before the logo and title -->
-    <button mat-icon-button td-menu-button tdLayoutToggle>
-      <mat-icon>menu</mat-icon>
+    <button md-icon-button td-menu-button tdLayoutToggle>
+      <md-icon>menu</md-icon>
     </button>
     <td-layout-manage-list>
       <md-toolbar td-sidenav-content>
@@ -406,8 +406,8 @@ e.g.
       <td-layout-nav toolbarTitle="Page Title">
         <!-- [tdLayoutManageListOpen] makes this button's click close the td-layout-manage-list sidenav -->
         <!-- [hideWhenOpened] is used to hide the button when the sidenav is opened -->
-        <button mat-icon-button td-menu-button tdLayoutManageListOpen [hideWhenOpened]="true">
-          <mat-icon>arrow_back</mat-icon>
+        <button md-icon-button td-menu-button tdLayoutManageListOpen [hideWhenOpened]="true">
+          <md-icon>arrow_back</md-icon>
         </button>
         Content
       </td-layout-nav>
@@ -422,8 +422,8 @@ OR
 <td-layout-nav toolbarTitle="Title">
   <!-- [td-menu-button] is used to position this button before the logo and title -->
   <!-- now we use it to toggle the manage-list sidenav for small/mid apps -->
-  <button mat-icon-button td-menu-button (click)="manageList.toggle()">
-    <mat-icon>menu</mat-icon>
+  <button md-icon-button td-menu-button (click)="manageList.toggle()">
+    <md-icon>menu</md-icon>
   </button>
   <td-layout-manage-list #manageList>
     <div td-sidenav-content>
@@ -788,9 +788,9 @@ These selectors were deprecated a few releases back so it should be ok to remove
 
   ```html
   <td-file-upload #singleFileUpload (upload)="uploadEvent($event)" [disabled]="disabled">
-    <mat-icon>file_upload</mat-icon><span>{{ singleFileUpload.files?.name }}</span>
+    <md-icon>file_upload</md-icon><span>{{ singleFileUpload.files?.name }}</span>
     <template td-file-input-label>
-      <mat-icon>attach_file</mat-icon><span>Choose a file...</span>
+      <md-icon>attach_file</md-icon><span>Choose a file...</span>
     </template>
   </td-file-upload>
   ```
@@ -1254,7 +1254,7 @@ ngAfterViewInit(): void {
 * **steps:** Support for ngFor and ngIf usage on td-step components and register/de-register steps automatically. ([6486eb527ae845224a170b8c7dda2dc92a089c3a](https://github.com/Teradata/covalent/commit/6486eb527ae845224a170b8c7dda2dc92a089c3a)), closes [#200](https://github.com/Teradata/covalent/issues/200)
 * **dependencies:** Upgrade to @angular@2.4.1 and @material@beta.1. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15))
 * **deployment:** Initial AoT support. ([6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15](https://github.com/Teradata/covalent/commit/6cd31f063ae5a1fd0e31378c1bbf6c466a7d3c15)), closes [#149](https://github.com/Teradata/covalent/issues/149)
-* **paging:** Usage of `md-select` as `perPage` selection insteaf of `mat-icon-button` and `mat-menu`. ([63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e](https://github.com/Teradata/covalent/commit/63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e))
+* **paging:** Usage of `md-select` as `perPage` selection insteaf of `md-icon-button` and `mat-menu`. ([63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e](https://github.com/Teradata/covalent/commit/63a0ca3d4acaebeb5b19eac826da0f8d2c4dfd1e))
 * **layouts:** Added optional sticky footer (and footer-inner). ([59253bef91c354cb85ddd9f1d9622ec76241d13e](https://github.com/Teradata/covalent/commit/59253bef91c354cb85ddd9f1d9622ec76241d13e))
 
   Usage:
@@ -1290,7 +1290,7 @@ ngAfterViewInit(): void {
 
   ```html
    <td-notification-count color="primary | accent | warn" [notifications]="boolean | number">
-     ... // could be an icon <mat-icon>notifications</mat-icon> or empty
+     ... // could be an icon <md-icon>notifications</md-icon> or empty
    </td-notification-count>
   ```
 
