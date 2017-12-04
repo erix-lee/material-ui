@@ -13,7 +13,7 @@
     "e2e-test": "protractor ./protractor.conf.js",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "lint": "tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
-    "postinstall2": "webdriver-manager update",
+
     "reinstall": "rm -rf node_modules tmp deploy dist && yarn install && npm rebuild node-sass",
     "reinstall:latest": "rm -rf node_modules tmp deploy dist && npm install",
     "test": "ng test --code-coverage --single-run --sourcemap=false",
@@ -38,25 +38,10 @@
     "node": ">=6.11.1 < 7",
     "npm": ">3"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/teradata/covalent.git"
-  },
-  "bugs": {
-    "url": "https://github.com/teradata/covalent/issues"
-  },
+
   "license": "MIT",
-  "author": "Teradata UX",
-  "contributors": [
-    "Kyle Ledbetter <kyle.ledbetter@teradata.com>",
-    "Richa Vyas <richa.vyas@teradata.com>",
-    "Ed Morales <eduardo.morales@teradata.com>",
-    "Jason Weaver <jason.weaver@teradata.com>",
-    "Jeremy Wilken <jeremy.wilken@teradata.com>",
-    "Jeremy Smartt <jeremy.smartt@teradata.com>",
-    "Ilsun Park <ilsun.park@teradata.com>",
-    "Steven Ov <steven.ov@teradata.com>"
-  ],
+  "author": "Lee_erix",
+
   "browserslist": [
     "last 2 versions",
     "ie 11"

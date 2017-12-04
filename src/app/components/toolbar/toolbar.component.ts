@@ -17,20 +17,20 @@ import { getDirection, setDirection } from '../../utilities/direction';
 })
 export class ToolbarComponent {
   updates: Object[] = [{
-      description: 'Pick and choose the styles you need',
+      description: '页面加载效果',
       icon: 'gradient',
-      route: '/docs/utility-sass-mixins',
-      title: 'Utility Style Mixins',
+      route: '/components/loading',
+      title: '加载',
     }, {
-      description: 'Override the typography',
+      description: '日期选择器',
       icon: 'font_download',
-      route: '/docs',
-      title: 'Custom Typography',
+      route: '/material/datepicker',
+      title: '日期选择',
     }, {
-      description: 'New templates and now using StackBlitz',
+      description: '表格加载10k数据',
       icon: 'view_carousel',
-      route: '/templates',
-      title: 'Templates',
+      route: '/ngxtable/virtual-scroll',
+      title: '10k的表格',
     },
   ];
 

@@ -28,17 +28,14 @@ export class SvgViewer implements OnInit {
   }
 
   private fetchAndInlineSvgContent(path: string): void {
-    const svgAbsPath = getAbsolutePathFromSrc(path);
-    console.info(path);
+
     this.http.get(path).subscribe(svgResponse => {
       this.inlineSvgContent(svgResponse.text());
     });
   }
 }
 
-function getAbsolutePathFromSrc(src: string) {
-  return src.slice(src.indexOf('assets/') - 1);
-}
+ 
 
 @NgModule({
   exports: [SvgViewer],

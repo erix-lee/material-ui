@@ -1,1 +1,1 @@
-ng build -e prod --aot --build-optimizer -op d:\oa\am5m
+ng build -prod --aot -build-optimizer -extract-css -base-href ./
