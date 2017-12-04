@@ -8,7 +8,7 @@
         <ng-template let-item let-last="last" ngFor [ngForOf]="category.items">
           <div flex-sm="50" flex-md="50" flex-gt-md="25">
             <mat-card href [routerLink]="[item.id]" class="mat-card-colored" flex>
-              <mat-toolbar class="bgc-deep-purple-A700 " layout="column" layout-align="center center" layout-padding>{{item.id}}
+              <mat-toolbar class="bgc-deep-purple-A700 " layout="column" layout-align="center center" layout-padding>
                 <mat-icon class="mat-icon-font-xl tc-white">
                   <docs-svg-viewer [attr.aria-label]="item.name" scaleToContainer="true" [src]="'assets/img/components/' + item.id + '.svg'"></docs-svg-viewer>
                 </mat-icon>

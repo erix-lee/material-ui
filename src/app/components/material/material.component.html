@@ -4,13 +4,13 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-nav-list td-sidenav-content>
-      <a mat-list-item [routerLink]="'.'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [tdLayoutNavListClose]="!media.query('gt-sm')">
-          <mat-icon matListAvatar>
-              layers
-          </mat-icon>
-          <h3 matLine> 全部组件</h3>
-          <p matLine></p>
-        </a>
+    <a mat-list-item [routerLink]="'.'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [tdLayoutNavListClose]="!media.query('gt-sm')">
+      <mat-icon matListAvatar>
+        layers
+      </mat-icon>
+      <h3 matLine> 全部组件</h3>
+      <p matLine></p>
+    </a>
     <ng-template let-category ngFor [ngForOf]="docItems.getCategories('components')">
       <h3 matSubheader>{{category.name}}({{category.items.length}})</h3>
       <ng-template let-item let-last="last" ngFor [ngForOf]="category.items">

@@ -1,1 +1,1 @@
-ng build -e prod --aot --build-optimizer true -op d:\oa\am5m
+ng build -e prod --aot --build-optimizer -op d:\oa\am5m
