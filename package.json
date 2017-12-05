@@ -11,9 +11,9 @@
   "scripts": {
     "e2e": "protractor",
     "e2e-test": "protractor ./protractor.conf.js",
+    "electron": "electron index.js",
     "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "lint": "tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
-
     "reinstall": "rm -rf node_modules tmp deploy dist && yarn install && npm rebuild node-sass",
     "reinstall:latest": "rm -rf node_modules tmp deploy dist && npm install",
     "test": "ng test --code-coverage --single-run --sourcemap=false",
@@ -24,7 +24,10 @@
     "bump-patch": "gulp bump-version --ver patch",
     "bump-minor": "gulp bump-version --ver minor",
     "bump-major": "gulp bump-version --ver major",
-    "aot": "./node_modules/.bin/ngc -p deploy/platform/tsconfig-aot.json && tsc -p src/platform/tsconfig-aot.json",
+    "packageDarwin": "electron-packager .  app --platform=darwin --arch=x64 --icon=hosts.icns --out=./dist --asar --app-version=2.0.4 --ignore=\"(src|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
+    "packageWin": "electron-packager --overwrite .  app --platform=win32 --arch=x64 --icon=src/favicon.ico --out=./distwin2 --asar --app-version=2.0.4 --ignore=\"(src|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+    "packageLinux": "electron-packager .  app --platform=linux --arch=x64 --out=./dist --asar --app-version=2.0.4 --ignore=\"(src|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
+     "aot": "./node_modules/.bin/ngc -p deploy/platform/tsconfig-aot.json && tsc -p src/platform/tsconfig-aot.json",
     "serve:prod": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng serve --aot --prod --sourcemap=false --build-optimizer",
     "build": "bash scripts/build-release",
     "npm-publish": "npm run build && bash scripts/npm-publish",
@@ -38,10 +41,8 @@
     "node": ">=6.11.1 < 7",
     "npm": ">3"
   },
-
   "license": "MIT",
   "author": "Lee_erix",
-
   "browserslist": [
     "last 2 versions",
     "ie 11"
@@ -74,6 +75,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.4.1",
     "d3": "^4.4.0",
+    "electron-prebuilt": "^1.4.13",
     "emoji-flags": "^1.2.0",
     "hammerjs": "^2.0.8",
     "highlight.js": "9.11.0",
