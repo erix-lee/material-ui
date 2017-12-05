@@ -10,6 +10,7 @@ import { data as countries } from 'emoji-flags';
 import chartGroups from './chartTypes';
 import { barChart, lineChartSeries } from './combo-chart-data';
 import { fadeAnimation } from '../../app.animations';
+import { FormControl } from '@angular/forms';
 const monthName = new Intl.DateTimeFormat('en-us', { month: 'short' });
 const weekdayName = new Intl.DateTimeFormat('en-us', { weekday: 'short' });
 export let colorSets = [
@@ -157,6 +158,8 @@ function multiFormat(value) {
 export class NgxchartComponent implements OnInit {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;
+  chartControl = new FormControl();
+  
   version = "1";
   theme = 'dark';
   chartType: string;
@@ -375,7 +378,7 @@ export class NgxchartComponent implements OnInit {
 
     this.selectChart('bar-vertical');
 
-    setInterval(this.updateData.bind(this), 1000);
+    setInterval(this.updateData.bind(this), 2000);
 
     if (!this.fitContainer) {
       this.applyDimensions();

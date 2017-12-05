@@ -1,4 +1,4 @@
-<td-layout #layout [class]="activeTheme" [dir]="dir" [sidenavWidth]="(media.registerQuery('gt-md') | async) ? '257px' : '320px'">
+<td-layout #layout [class]="activeTheme" [dir]="dir" >
   <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" navigationRoute="/" flex color="primary">
     <mat-nav-list flex>
       <a mat-list-item (click)="!media.query('gt-md') && layout.close()" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">

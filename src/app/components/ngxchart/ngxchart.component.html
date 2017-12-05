@@ -7,15 +7,15 @@
     <div class="sidebar" td-sidenav-content>
 
 
-        <h3>Chart Type</h3>
-        <select [ngModel]="chartType" (ngModelChange)="selectChart($event)">
-            <ng-template ngFor let-group [ngForOf]="chartGroups">
-                <optgroup [label]="group.name">
-                    <option *ngFor="let chart of group.charts" [value]="chart.selector">{{chart.name}}</option>
-                </optgroup>
-            </ng-template>
-        </select>
 
+        <mat-form-field>
+            <mat-select placeholder="Chart Type" [ngModel]="chartType" (ngModelChange)="selectChart($event)">
+
+                <mat-optgroup *ngFor="let group of chartGroups" [label]="group.name">
+                    <mat-option *ngFor="let chart of group.charts" [value]="chart.selector">{{chart.name}}</mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
 
 
         <h3 (click)="dataVisable = !dataVisable" style="cursor: pointer">
