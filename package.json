@@ -10,25 +10,14 @@
   ],
   "scripts": {
     "e2e": "protractor",
-    "e2e-test": "protractor ./protractor.conf.js",
     "electron": "electron index.js",
-    "webdriver-update": "bash ./node_modules/.bin/webdriver-manager update",
     "lint": "tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
-    "reinstall": "rm -rf node_modules tmp deploy dist && yarn install && npm rebuild node-sass",
-    "reinstall:latest": "rm -rf node_modules tmp deploy dist && npm install",
     "test": "ng test --code-coverage --single-run --sourcemap=false",
     "package:mac": "electron-packager .  app --platform=darwin --arch=x64 --icon=hosts.icns --out=./dist/darwin --asar --app-version=2.0.4 --ignore=\"(src|.gitignore|LICENSE|README.md|webpack.config*|node_modules)\"",
     "package:win": "electron-packager --overwrite .  app --platform=win32 --arch=x64 --icon=src/favicon.ico --out=./dist/win --asar --app-version=2.0.4 --ignore=\"(src|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
     "package:linux": "electron-packager .  app --platform=linux --arch=x64 --out=./dist/linux --asar --app-version=2.0.4 --ignore=\"(src|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
-    "aot": "./node_modules/.bin/ngc -p deploy/platform/tsconfig-aot.json && tsc -p src/platform/tsconfig-aot.json",
     "serve:prod": "node --max_old_space_size=10240 ./node_modules/@angular/cli/bin/ng serve --aot --prod --sourcemap=false --build-optimizer",
-    "build:prod": "node --max_old_space_size=10240 ./node_modules/@angular/cli/bin/ng build --aot --prod --sourcemap=false --build-optimizer",
-    "npm-publish": "npm run build && bash scripts/npm-publish",
-    "nightly-publish": "npm run build && bash scripts/nightly-publish",
-    "ghpages-deploy": "node --max_old_space_size=5048 ./node_modules/@angular/cli/bin/ng build --base-href /covalent/ --aot --prod --sourcemap=false --build-optimizer && bash scripts/ghpages-deploy",
-    "start-release": "bash scripts/start-release",
-    "finish-release": "bash scripts/finish-release",
-    "combat-training": "bash scripts/combat-training"
+    "build:prod": "node --max_old_space_size=10240 ./node_modules/@angular/cli/bin/ng build --aot --prod --sourcemap=false --build-optimizer"
   },
   "engines": {
     "node": ">=6.11.1 < 7",
