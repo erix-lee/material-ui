@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { slideInDownAnimation } from '../../../app.animations';
 
 @Component({
   selector: 'basic-auto-demo',
@@ -24,7 +25,8 @@ import { Component } from '@angular/core';
         [reorderable]="reorderable">
       </ngx-datatable>
     </div>
-  `
+  `,
+  animations: [slideInDownAnimation],
 })
 export class BasicAutoComponent {
 

@@ -25,7 +25,7 @@ Covalent is a reusable UI platform from Teradata for building web applications w
 * If using yarn locally, `npm rebuild node-sass` is required for https://github.com/yarnpkg/yarn/issues/1981 as of `v0.22.0`
 ---
 
-* [Getting Started](docs/GETTING_STARTED.md)
+* [Getting Started](docs/GETTING_STARTED1.md)
 * [Contributing Guidelines](docs/CONTRIBUTING.md)
 * [Developer Guide](docs/DEVELOPER_GUIDE.md)
 * [Upgrading](docs/UPGRADE.md)

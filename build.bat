@@ -1,1 +1,0 @@
-ng build -prod --aot -build-optimizer -extract-css -base-href ./

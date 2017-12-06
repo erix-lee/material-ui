@@ -6,9 +6,9 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "dist/web",
       "assets": [
-        { "glob": "**/*", "input": "../docs", "output": "./docs/" },
+
         { "glob": "**/*", "input": "../node_modules/@covalent/code-editor/assets/monaco", "output": "./assets/monaco/" },
         "assets",
         "platform",

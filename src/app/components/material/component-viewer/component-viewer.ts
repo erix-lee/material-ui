@@ -10,7 +10,7 @@ import {DocItem, DocumentationItems} from '../shared/documentation-items/documen
 import {TableOfContentsModule} from '../shared/table-of-contents/table-of-contents.module';
 import {ComponentPageTitle} from '../page-title/page-title';
 import { ExampleModule } from '@angular/material-examples';
-import { slideInDownAnimation } from '../../../app.animations';
+import { slideInDownAnimation, fadeAnimation } from '../../../app.animations';
 
 
 @Component({
@@ -18,7 +18,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './component-viewer.html',
   styleUrls: ['./component-viewer.scss'],
   encapsulation: ViewEncapsulation.None,
-  animations: [slideInDownAnimation],
+  animations: [fadeAnimation],
 })
 export class ComponentViewer {
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
