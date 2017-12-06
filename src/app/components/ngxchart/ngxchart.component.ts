@@ -178,8 +178,8 @@ export class NgxchartComponent implements OnInit {
   range: boolean = false;
 
   view: any[];
-  width: number = 700;
-  height: number = 300;
+  width: number = 1000;
+  height: number = 600;
   fitContainer: boolean = false;
 
   // options
