@@ -14,7 +14,7 @@
     <ng-template let-category ngFor [ngForOf]="docItems.getCategories('components')">
       <h3 matSubheader>{{category.name}}({{category.items.length}})</h3>
       <ng-template let-item let-last="last" ngFor [ngForOf]="category.items">
-        <a mat-list-item [routerLink]="[item.id]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [tdLayoutNavListClose]="!media.query('gt-sm')">
+        <a mat-list-item [routerLink]="'material/'+[item.id]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [tdLayoutNavListClose]="!media.query('gt-sm')">
           <mat-icon matListAvatar>
             <docs-svg-viewer [attr.aria-label]="item.name" scaleToContainer="true" [src]="'assets/img/components/' + item.id + '.svg'"></docs-svg-viewer>
           </mat-icon>
@@ -24,8 +24,20 @@
         <mat-divider *ngIf="!last" matInset></mat-divider>
       </ng-template>
 
-    </ng-template>
+    </ng-template>CDK
 
+    <ng-template let-category ngFor [ngForOf]="docItems.getCategories('cdk')">
+        <h3 matSubheader>{{category.name}}({{category.items.length}})</h3>
+        <ng-template let-item let-last="last" ngFor [ngForOf]="category.items">
+          <a mat-list-item [routerLink]="'cdk/'+[item.id]" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" [tdLayoutNavListClose]="!media.query('gt-sm')">
+              <mat-icon matListAvatar>{{ item.icon}} </mat-icon>1
+            <h3 matLine> {{item.name}}</h3>
+            <p matLine> {{item.description}} </p>
+          </a>
+          <mat-divider *ngIf="!last" matInset></mat-divider>
+        </ng-template>
+  
+      </ng-template>
   </mat-nav-list>
   <div td-toolbar-content layout="row" layout-align="start center" flex>
     <button mat-icon-button tdLayoutNavListOpen [hideWhenOpened]="true">

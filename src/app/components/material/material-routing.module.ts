@@ -15,7 +15,7 @@ const routes: Routes =[
           path: '',
         },
         {
-          path: ':id',
+          path: ':section/:id',
           component: ComponentViewer,
           children: [
             {path: '', redirectTo: 'api', pathMatch: 'full'},
@@ -25,6 +25,7 @@ const routes: Routes =[
             {path: '**', redirectTo: 'overview'},
           ],
         },
+        {path: '**', redirectTo: ''},
       ]
      },
      

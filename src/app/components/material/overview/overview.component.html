@@ -7,11 +7,36 @@
       <div layout-gt-xs="row" layout-wrap>
         <ng-template let-item let-last="last" ngFor [ngForOf]="category.items">
           <div flex-sm="50" flex-md="50" flex-gt-md="25">
-            <mat-card href [routerLink]="[item.id]" class="mat-card-colored" flex>
+            <mat-card href [routerLink]="'material/'+[item.id]" class="mat-card-colored" flex>
               <mat-toolbar class="bgc-deep-purple-A700 " layout="column" layout-align="center center" layout-padding>
                 <mat-icon class="mat-icon-font-xl tc-white">
                   <docs-svg-viewer [attr.aria-label]="item.name" scaleToContainer="true" [src]="'assets/img/components/' + item.id + '.svg'"></docs-svg-viewer>
                 </mat-icon>
+              </mat-toolbar>
+              <mat-card-content>
+                <div layout="column" layout-padding>
+                  <div class="mat-subheading-2">{{item.name}}</div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </ng-template>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+<ng-template let-category ngFor [ngForOf]="docItems.getCategories('cdk')">
+  <mat-card>
+    <mat-card-title>{{category.name}}({{category.items.length}})</mat-card-title>
+    <mat-card-subtitle>{{category.summary}}</mat-card-subtitle>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div layout-gt-xs="row" layout-wrap>
+        <ng-template let-item let-last="last" ngFor [ngForOf]="category.items">
+          <div flex-sm="50" flex-md="50" flex-gt-md="25">
+            <mat-card href [routerLink]="'cdk/'+[item.id]" class="mat-card-colored" flex>
+              <mat-toolbar class="bgc-deep-purple-A700 " layout="column" layout-align="center center" layout-padding>
+                <mat-icon class="mat-icon-font-xl tc-white"> {{ item.icon}} </mat-icon>
               </mat-toolbar>
               <mat-card-content>
                 <div layout="column" layout-padding>

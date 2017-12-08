@@ -1,14 +1,16 @@
-import {CommonModule} from '@angular/common';
-import {Component, ElementRef, NgModule, OnInit, ViewChild, ViewEncapsulation,HostBinding} from '@angular/core';
-import {MatTabsModule, MatProgressBarModule,MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
-  MatSelectModule, MatToolbarModule,  MatTooltipModule, MatAutocompleteModule,MatFormFieldModule} from '@angular/material';
-import {ActivatedRoute, Params, Router, RouterModule} from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, NgModule, OnInit, ViewChild, ViewEncapsulation, HostBinding } from '@angular/core';
+import {
+  MatTabsModule, MatProgressBarModule, MatButtonModule, MatListModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatButtonToggleModule, MatSlideToggleModule,
+  MatSelectModule, MatToolbarModule, MatTooltipModule, MatAutocompleteModule, MatFormFieldModule
+} from '@angular/material';
+import { ActivatedRoute, Params, Router, RouterModule } from '@angular/router';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
-import {DocViewerModule} from '../shared/doc-viewer/doc-viewer-module';
-import {DocItem, DocumentationItems} from '../shared/documentation-items/documentation-items';
-import {TableOfContentsModule} from '../shared/table-of-contents/table-of-contents.module';
-import {ComponentPageTitle} from '../page-title/page-title';
+import { Observable } from 'rxjs/Observable';
+import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
+import { DocItem, DocumentationItems } from '../shared/documentation-items/documentation-items';
+import { TableOfContentsModule } from '../shared/table-of-contents/table-of-contents.module';
+import { ComponentPageTitle } from '../page-title/page-title';
 import { ExampleModule } from '@angular/material-examples';
 import { slideInDownAnimation, fadeAnimation } from '../../../app.animations';
 
@@ -26,28 +28,31 @@ export class ComponentViewer {
   componentDocItem: DocItem;
 
   sections: Set<string> = new Set(['overview', 'api']);
-
+  package: string;
   constructor(private _route: ActivatedRoute,
-              private router: Router,
-              public _componentPageTitle: ComponentPageTitle,
-              public docItems: DocumentationItems) {
+    private router: Router,
+    public _componentPageTitle: ComponentPageTitle,
+    public docItems: DocumentationItems) {
     // Listen to changes on the current route for the doc id (e.g. button/checkbox) and the
     // parent route for the section (material/cdk).
+    console.info(_route.params, _route.parent.params)
     Observable.combineLatest(_route.params, _route.parent.params)
-        .map((p: [Params, Params]) => ({id: p[0]['id'], section: p[1]['section']}))
-        .map(p => docItems.getItemById(p.id, p.section))
-        .subscribe(d => {
-          this.componentDocItem = d;
-          if (this.componentDocItem) {
-            this._componentPageTitle.title = `${this.componentDocItem.name}`;
-            this.componentDocItem.examples.length ?
-                this.sections.add('examples') :
-                this.sections.delete('examples');
+      .map((p: [Params, Params]) => ({ id: p[0]['id'], section: p[0]['section'] }))
+      .map(p => docItems.getItemById(p.id, p.section))
+      .subscribe(d => {
+        this.componentDocItem = d;
+        console.info(d);
+        if (this.componentDocItem) {
+          this._componentPageTitle.title = `${this.componentDocItem.name}`;
+          this.componentDocItem.examples.length ?
+            this.sections.add('examples') :
+            this.sections.delete('examples');
 
-          } else {
-            this.router.navigate(['.']);
-          }
-        });
+        } else {
+
+          this.router.navigate(['.']);
+        }
+      });
   }
 }
 
@@ -59,7 +64,7 @@ export class ComponentViewer {
 export class ComponentOverview implements OnInit {
   @ViewChild('intialFocusTarget') focusTarget: ElementRef;
 
-  constructor(public componentViewer: ComponentViewer) {}
+  constructor(public componentViewer: ComponentViewer) { }
 
   ngOnInit() {
     // 100ms timeout is used to allow the page to settle before moving focus for screen readers.
@@ -73,14 +78,14 @@ export class ComponentOverview implements OnInit {
   styleUrls: ['./component-api.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ComponentApi extends ComponentOverview {}
+export class ComponentApi extends ComponentOverview { }
 
 @Component({
   selector: 'component-examples',
   templateUrl: './component-examples.html',
   encapsulation: ViewEncapsulation.None,
 })
-export class ComponentExamples extends ComponentOverview {}
+export class ComponentExamples extends ComponentOverview { }
 
 @NgModule({
   imports: [
@@ -98,4 +103,4 @@ export class ComponentExamples extends ComponentOverview {}
   declarations: [ComponentViewer, ComponentOverview, ComponentApi, ComponentExamples],
   providers: [DocumentationItems, ComponentPageTitle],
 })
-export class ComponentViewerModule {}
+export class ComponentViewerModule { }

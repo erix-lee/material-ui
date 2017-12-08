@@ -6,6 +6,7 @@ export interface DocItem {
   packageName?: string;
   examples?: string[];
   description?:string;
+  icon?:string;
 }
 
 export interface DocCategory {
@@ -168,21 +169,21 @@ const DOCS: {[key: string]: DocCategory[]} = {
       id: 'component-composition',
       name: 'Common Behaviors',
       items: [
-        {id: 'a11y', name: 'Accessibility', examples: []},
-        {id: 'observers', name: 'Observers', examples: []},
-        {id: 'layout', name: 'Layout', examples: []},
-        {id: 'overlay', name: 'Overlay', examples: []},
-        {id: 'portal', name: 'Portal', examples: []},
-        {id: 'bidi', name: 'Bidirectionality', examples: []},
-        {id: 'scrolling', name: 'Scrolling', examples: []},
+        {id: 'a11y', name: 'Accessibility', icon:'accessibility', examples: []},
+        {id: 'observers', name: 'Observers', icon:'remove_red_eye',examples: []},
+        {id: 'layout', name: 'Layout', icon:'view_compact',examples: []},
+        {id: 'overlay', name: 'Overlay', icon:'texture',examples: []},
+        {id: 'portal', name: 'Portal',icon:'widgets',examples: []},
+        {id: 'bidi', name: 'Bidirectionality',icon:'directions', examples: []},
+        {id: 'scrolling', name: 'Scrolling', icon:'vertical_align_center',examples: []},
       ]
     },
     {
       id: 'components',
       name: 'Components',
       items: [
-        {id: 'table', name: 'Table', examples: []},
-        {id: 'stepper', name: 'Stepper', examples: []},
+        {id: 'table', name: 'Table', icon:'view_column',examples: []},
+        {id: 'stepper', name: 'Stepper',icon:'done_all', examples: []},
 
       ]
     },
@@ -228,6 +229,7 @@ export class DocumentationItems {
   }
 
   getItemById(id: string, section: string): DocItem {
+    console.info(section);
     const sectionLookup = section == 'cdk' ? 'cdk' : 'material';
     return ALL_DOCS.find(doc => doc.id === id && doc.packageName == sectionLookup);
   }
