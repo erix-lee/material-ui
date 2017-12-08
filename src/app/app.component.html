@@ -2,12 +2,13 @@
   <td-navigation-drawer sidenavTitle="Covalent" logo="assets:teradata" navigationRoute="/" flex color="primary">
     <mat-nav-list flex>
       <a mat-list-item (click)="!media.query('gt-md') && layout.close()" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-        <mat-icon matListIcon>home</mat-icon>
+        <mat-icon matListIcon svgIcon="wrap"></mat-icon>
         Home2
-      </a>
+      </a> 
       <a *ngFor="let item of routes" mat-list-item (click)="!media.query('gt-md') && layout.close()" [routerLink]="[item.route]"
         [routerLinkActive]="['active']">
-        <mat-icon matListIcon>{{item.icon}}</mat-icon>
+        <mat-icon matListIcon  >{{item.icon}}</mat-icon>
+
         {{item.title}}
       </a>
     </mat-nav-list>

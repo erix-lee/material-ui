@@ -4,10 +4,10 @@ import { Dir } from '@angular/cdk/bidi';
 import { MatIconRegistry } from '@angular/material';
 import { TdMediaService, LoadingMode, LoadingType } from '@covalent/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Router, NavigationEnd,NavigationStart } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { getSelectedLanguage } from './utilities/translate';
 import { getDirection } from './utilities/direction';
-import { TdLoadingService} from '@covalent/core';
+import { TdLoadingService } from '@covalent/core';
 @Component({
   selector: 'docs-covalent',
   templateUrl: './app.component.html',
@@ -21,16 +21,16 @@ export class DocsAppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events
       .subscribe((event) => {
-        
+
         if (event instanceof NavigationStart) { // 当导航成功结束时执行
           this._loadingService.register('configFullscreen');
-        }else  if (event instanceof NavigationEnd) { // 当导航成功结束时执行
+        } else if (event instanceof NavigationEnd) { // 当导航成功结束时执行
           let divEle = this.elementRef.nativeElement.querySelector('.td-layout-nav-list-main .td-layout-nav-list-content');//获取
 
           console.dir(divEle);
           if (divEle) {
 
-            divEle.scrollTo(0,0);
+            divEle.scrollTo(0, 0);
           }
           this._loadingService.resolve('configFullscreen');
         }
@@ -79,17 +79,17 @@ export class DocsAppComponent implements OnInit {
 
   dir: string;
 
-  constructor(private _loadingService: TdLoadingService,private elementRef: ElementRef, private router: Router, private _iconRegistry: MatIconRegistry,
+  constructor(private _loadingService: TdLoadingService, private elementRef: ElementRef, private router: Router, private _iconRegistry: MatIconRegistry,
     private _domSanitizer: DomSanitizer,
     private _changeDetectorRef: ChangeDetectorRef,
     public media: TdMediaService,
     translateService: TranslateService) {
-      this._loadingService.create({
-        name: 'configFullscreen',
-        mode: LoadingMode.Indeterminate,
-        type: LoadingType.Linear,
-        color: 'accent',
-      });
+    this._loadingService.create({
+      name: 'configFullscreen',
+      mode: LoadingMode.Indeterminate,
+      type: LoadingType.Linear,
+      color: 'accent',
+    });
     // Set fallback language
     translateService.setDefaultLang('en');
     // Supported languages
@@ -123,8 +123,10 @@ export class DocsAppComponent implements OnInit {
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/listener.svg'));
     this._iconRegistry.addSvgIconInNamespace('assets', 'querygrid',
       this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/querygrid.svg'));
-
+    this._iconRegistry.addSvgIconSet(this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mdi.svg'));
+    //this._iconRegistry.addSvgIconSetInNamespace('mdi', this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/mdi.svg'));
     // set direction
+
     this.dir = getDirection();
   }
 

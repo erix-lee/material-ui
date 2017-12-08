@@ -8,7 +8,7 @@ import {Http} from '@angular/http';
 })
 export class SvgViewer implements OnInit {
   @Input() src: string;
-  @Input() scaleToContainer: boolean;
+  @Input() scaleToContainer: boolean=true;
 
   constructor(private elementRef: ElementRef, private http: Http) { }
 

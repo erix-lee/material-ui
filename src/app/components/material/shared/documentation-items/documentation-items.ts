@@ -5,6 +5,7 @@ export interface DocItem {
   name: string;
   packageName?: string;
   examples?: string[];
+  description?:string;
 }
 
 export interface DocCategory {
@@ -27,12 +28,14 @@ const DOCS: {[key: string]: DocCategory[]} = {
     {
       id: 'forms',
       name: 'Form Controls',
+      summary:'表单控件',
       items: [
-        {id: 'autocomplete', name: 'Autocomplete', examples: ['autocomplete-overview']},
-        {id: 'checkbox', name: 'Checkbox', examples: ['checkbox-configurable']},
+        {id: 'autocomplete', name: 'Autocomplete', description:'自动完成', examples: ['autocomplete-overview']},
+        {id: 'checkbox', name: 'Checkbox',description:'复选框', examples: ['checkbox-configurable']},
         {
           id: 'datepicker',
           name: 'Datepicker',
+          description:'日期选择器',
           examples: [
             'datepicker-overview',
             'datepicker-start-view',

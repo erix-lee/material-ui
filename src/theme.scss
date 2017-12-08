@@ -1,13 +1,13 @@
 
 @import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme';
-
+$mdi-font-path:'~mdi/fonts/';
 // (optional) Additional themes
 @import '~@covalent/markdown/markdown-theme';
 @import '~@covalent/highlight/highlight-theme';
 
 // Plus imports for other components in your app.
-
+@import '~mdi/scss/materialdesignicons.scss';
 // Include the base styles for Angular Material core. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 @include mat-core();
@@ -17,6 +17,8 @@
 
 // Include material icons
 $mat-font-url: '~@covalent/core/common/styles/font/';
+
+
 @include covalent-material-icons();
 
 // Include covalent utility classes
@@ -30,7 +32,6 @@ $mat-font-url: '~@covalent/core/common/styles/font/';
 
 // Include covalent color classes
 @include covalent-colors();
-
 
 // Custom orange contrast
 $mat-orange-custom: ( 50: #FFF3E0,
@@ -195,7 +196,11 @@ mat-nav-list {
         }
         mat-icon[matListIcon] {
             color: mat-color($accent);
+            svg {
+                fill: mat-color($accent);
+            }
         }
+     
     }
 }
 

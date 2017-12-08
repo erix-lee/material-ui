@@ -140,6 +140,7 @@
   </mat-tab-group>
 </mat-card>
 <mat-card>
+  
   <mat-card-content>
     <h3 class="mat-title">Search Icons</h3>
     <h4 class="mat-subheading-2">Current icons bundled with Icon Service</h4>
@@ -147,13 +148,22 @@
       <mat-tab>
         <ng-template matTabLabel>Demo</ng-template>
         <div layout="row" layout-align="center center" class="md-padding">
-          <td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
+          {{filteredList.length}}<td-search-box placeholder="icon search" [alwaysVisible]="true" [showUnderline]="true" (searchDebounce)="query = $event; filter()" flex></td-search-box>
         </div>
         <mat-divider></mat-divider>
         <mat-card-content>
           <div *ngIf="filteredList.length > 0" layout="row" layout-align="start center" layout-wrap>
             <div *ngFor="let icon of filteredList" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
                 <mat-icon>{{icon}}</mat-icon>
+                 
+                <p class="mat-caption">{{icon}}</p>
+            </div>
+          </div> 
+          <mat-divider></mat-divider>
+          <div *ngIf="filteredList2.length > 0" layout="row" layout-align="start center" layout-wrap> 
+            <div *ngFor="let icon of filteredList2" flex-xs="20" flex-sm="25" flex-md="25" flex-lg="15" flex-gt-lg="15" layout="column" layout-align="end center">
+                
+                <mat-icon [svgIcon]="icon" ></mat-icon>
                 <p class="mat-caption">{{icon}}</p>
             </div>
           </div>
