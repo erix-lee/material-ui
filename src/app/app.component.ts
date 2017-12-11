@@ -27,7 +27,7 @@ export class DocsAppComponent implements OnInit {
         } else if (event instanceof NavigationEnd) { // 当导航成功结束时执行
           let divEle = this.elementRef.nativeElement.querySelector('.td-layout-nav-list-main .td-layout-nav-list-content');//获取
 
-          console.dir(divEle);
+         // console.dir(divEle);
           if (divEle) {
 
             divEle.scrollTo(0, 0);

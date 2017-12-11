@@ -35,13 +35,13 @@ export class ComponentViewer {
     public docItems: DocumentationItems) {
     // Listen to changes on the current route for the doc id (e.g. button/checkbox) and the
     // parent route for the section (material/cdk).
-    console.info(_route.params, _route.parent.params)
+    //console.info(_route.params, _route.parent.params)
     Observable.combineLatest(_route.params, _route.parent.params)
       .map((p: [Params, Params]) => ({ id: p[0]['id'], section: p[0]['section'] }))
       .map(p => docItems.getItemById(p.id, p.section))
       .subscribe(d => {
         this.componentDocItem = d;
-        console.info(d);
+        //console.info(d);
         if (this.componentDocItem) {
           this._componentPageTitle.title = `${this.componentDocItem.name}`;
           this.componentDocItem.examples.length ?

@@ -229,7 +229,7 @@ export class DocumentationItems {
   }
 
   getItemById(id: string, section: string): DocItem {
-    console.info(section);
+    //console.info(section);
     const sectionLookup = section == 'cdk' ? 'cdk' : 'material';
     return ALL_DOCS.find(doc => doc.id === id && doc.packageName == sectionLookup);
   }
