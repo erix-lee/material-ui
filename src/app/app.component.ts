@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, OnInit, ElementRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, ElementRef , enableProdMode} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Dir } from '@angular/cdk/bidi';
 import { MatIconRegistry } from '@angular/material';
@@ -8,6 +8,7 @@ import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { getSelectedLanguage } from './utilities/translate';
 import { getDirection } from './utilities/direction';
 import { TdLoadingService } from '@covalent/core';
+enableProdMode();
 @Component({
   selector: 'docs-covalent',
   templateUrl: './app.component.html',

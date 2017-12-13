@@ -74,10 +74,7 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #settingsMenu="matMenu">
-    <button mat-menu-item (click)="dir = (dir == 'rtl' ? 'ltr' : 'rtl'); changeDir(dir)" title="Toggle between RTL and LTR">
-      <mat-icon>swap_horiz</mat-icon>
-      <span>{{dir.toUpperCase()}}</span>
-    </button>
+
     <button mat-menu-item *ngIf="activeTheme === 'theme-dark'" (click)="theme('default-theme')">
       <mat-icon>brightness_high</mat-icon>
       <span>Light Mode</span>

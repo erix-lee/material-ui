@@ -9,7 +9,7 @@ import { ChangeDetectorRef, Component, ElementRef, Inject, Input, NgModule, View
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MAT_DIALOG_DATA, MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialog, MatDialogModule, MatDialogRef, MatExpansionModule, MatFormFieldModule, MatGridListModule, MatIconModule, MatIconRegistry, MatInputModule, MatListModule, MatMenuModule, MatPaginator, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSliderModule, MatSnackBar, MatSnackBarModule, MatSort, MatSortModule, MatStepperModule, MatTableDataSource, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
+import { MAT_DIALOG_DATA, MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialog, MatDialogModule, MatDialogRef, MatExpansionModule, MatFormFieldControl, MatFormFieldModule, MatGridListModule, MatIconModule, MatIconRegistry, MatInputModule, MatListModule, MatMenuModule, MatPaginator, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSliderModule, MatSnackBar, MatSnackBarModule, MatSort, MatSortModule, MatStepperModule, MatTableDataSource, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import { startWith } from 'rxjs/operators/startWith';
 import { map } from 'rxjs/operators/map';
 import { __extends } from 'tslib';
@@ -23,7 +23,6 @@ import * as _rollupMoment from 'moment';
 import _rollupMoment__default from 'moment';
 import { FocusMonitor } from '@angular/cdk/a11y';
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { MatFormFieldControl } from '@angular/material/form-field';
 import { Subject } from 'rxjs/Subject';
 import { DomSanitizer } from '@angular/platform-browser';
 import '@angular/material/sidenav';
@@ -38,7 +37,7 @@ import { switchMap } from 'rxjs/operators/switchMap';
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var ExampleMaterialModule = (function () {
+var ExampleMaterialModule = /** @class */ (function () {
     function ExampleMaterialModule() {
     }
     ExampleMaterialModule.decorators = [
@@ -87,7 +86,7 @@ var ExampleMaterialModule = (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes} checked by tsc
  */
-var User = (function () {
+var User = /** @class */ (function () {
     function User(name) {
         this.name = name;
     }
@@ -96,7 +95,7 @@ var User = (function () {
 /**
  * \@title Display value autocomplete
  */
-var AutocompleteDisplayExample = (function () {
+var AutocompleteDisplayExample = /** @class */ (function () {
     function AutocompleteDisplayExample() {
         this.myControl = new FormControl();
         this.options = [
@@ -159,7 +158,7 @@ var AutocompleteDisplayExample = (function () {
 /**
  * \@title Filter autocomplete
  */
-var AutocompleteFilterExample = (function () {
+var AutocompleteFilterExample = /** @class */ (function () {
     function AutocompleteFilterExample() {
         this.myControl = new FormControl();
         this.options = [
@@ -211,7 +210,7 @@ var AutocompleteFilterExample = (function () {
 /**
  * \@title Autocomplete overview
  */
-var AutocompleteOverviewExample = (function () {
+var AutocompleteOverviewExample = /** @class */ (function () {
     function AutocompleteOverviewExample() {
         var _this = this;
         this.states = [
@@ -260,7 +259,7 @@ var AutocompleteOverviewExample = (function () {
     AutocompleteOverviewExample.decorators = [
         { type: Component, args: [{
                     selector: 'autocomplete-overview-example',
-                    template: "<form class=\"example-form\"><mat-form-field class=\"example-full-width\"><input matInput placeholder=\"State\" aria-label=\"State\" [matAutocomplete]=\"auto\" [formControl]=\"stateCtrl\"><mat-autocomplete #auto=\"matAutocomplete\"><mat-option *ngFor=\"let state of filteredStates | async\" [value]=\"state.name\"><img style=\"vertical-align:middle\" aria-hidden src=\"{{state.flag}}\" height=\"25\"> <span>{{ state.name }}</span> | <small>Population: {{state.population}}</small></mat-option></mat-autocomplete></mat-form-field><br><mat-slide-toggle [checked]=\"stateCtrl.disabled\" (change)=\"stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()\">Disable Input?</mat-slide-toggle></form>",
+                    template: "<form class=\"example-form\"><mat-form-field class=\"example-full-width\"><input matInput placeholder=\"State\" aria-label=\"State\" [matAutocomplete]=\"auto\" [formControl]=\"stateCtrl\"><mat-autocomplete #auto=\"matAutocomplete\"><mat-option *ngFor=\"let state of filteredStates | async\" [value]=\"state.name\"><img style=\"vertical-align:middle;\" aria-hidden src=\"{{state.flag}}\" height=\"25\"> <span>{{ state.name }}</span> | <small>Population: {{state.population}}</small></mat-option></mat-autocomplete></mat-form-field><br><mat-slide-toggle [checked]=\"stateCtrl.disabled\" (change)=\"stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()\">Disable Input?</mat-slide-toggle></form>",
                     styles: [".example-form { min-width: 150px; max-width: 500px; width: 100%; } .example-full-width { width: 100%; } "]
                 },] },
     ];
@@ -276,7 +275,7 @@ var AutocompleteOverviewExample = (function () {
 /**
  * \@title Simple autocomplete
  */
-var AutocompleteSimpleExample = (function () {
+var AutocompleteSimpleExample = /** @class */ (function () {
     function AutocompleteSimpleExample() {
         this.myControl = new FormControl();
         this.options = [
@@ -304,7 +303,7 @@ var AutocompleteSimpleExample = (function () {
 /**
  * \@title Basic buttons
  */
-var ButtonOverviewExample = (function () {
+var ButtonOverviewExample = /** @class */ (function () {
     function ButtonOverviewExample() {
     }
     ButtonOverviewExample.decorators = [
@@ -325,7 +324,7 @@ var ButtonOverviewExample = (function () {
 /**
  * \@title Exclusive selection
  */
-var ButtonToggleExclusiveExample = (function () {
+var ButtonToggleExclusiveExample = /** @class */ (function () {
     function ButtonToggleExclusiveExample() {
     }
     ButtonToggleExclusiveExample.decorators = [
@@ -347,7 +346,7 @@ var ButtonToggleExclusiveExample = (function () {
 /**
  * \@title Basic button-toggles
  */
-var ButtonToggleOverviewExample = (function () {
+var ButtonToggleOverviewExample = /** @class */ (function () {
     function ButtonToggleOverviewExample() {
     }
     ButtonToggleOverviewExample.decorators = [
@@ -368,7 +367,7 @@ var ButtonToggleOverviewExample = (function () {
 /**
  * \@title Button varieties
  */
-var ButtonTypesExample = (function () {
+var ButtonTypesExample = /** @class */ (function () {
     function ButtonTypesExample() {
     }
     ButtonTypesExample.decorators = [
@@ -390,7 +389,7 @@ var ButtonTypesExample = (function () {
 /**
  * \@title Card with multiple sections
  */
-var CardFancyExample = (function () {
+var CardFancyExample = /** @class */ (function () {
     function CardFancyExample() {
     }
     CardFancyExample.decorators = [
@@ -412,7 +411,7 @@ var CardFancyExample = (function () {
 /**
  * \@title Basic cards
  */
-var CardOverviewExample = (function () {
+var CardOverviewExample = /** @class */ (function () {
     function CardOverviewExample() {
     }
     CardOverviewExample.decorators = [
@@ -433,7 +432,7 @@ var CardOverviewExample = (function () {
 /**
  * \@title Basic CDK data-table
  */
-var CdkTableBasicExample = (function () {
+var CdkTableBasicExample = /** @class */ (function () {
     function CdkTableBasicExample() {
         this.displayedColumns = ['userId', 'userName', 'progress', 'color'];
         this.exampleDatabase = new ExampleDatabase();
@@ -473,7 +472,7 @@ var NAMES = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
 /**
  * An example database that the data source uses to retrieve data for the table.
  */
-var ExampleDatabase = (function () {
+var ExampleDatabase = /** @class */ (function () {
     function ExampleDatabase() {
         /**
          * Stream that emits whenever the data has been modified.
@@ -533,7 +532,7 @@ var ExampleDatabase = (function () {
  * the underlying data. Instead, it only needs to take the data and send the table exactly what
  * should be rendered.
  */
-var ExampleDataSource = (function (_super) {
+var ExampleDataSource = /** @class */ (function (_super) {
     __extends(ExampleDataSource, _super);
     function ExampleDataSource(_exampleDatabase) {
         var _this = _super.call(this) || this;
@@ -569,7 +568,7 @@ var ExampleDataSource = (function (_super) {
 /**
  * \@title Configurable checkbox
  */
-var CheckboxConfigurableExample = (function () {
+var CheckboxConfigurableExample = /** @class */ (function () {
     function CheckboxConfigurableExample() {
         this.checked = false;
         this.indeterminate = false;
@@ -595,7 +594,7 @@ var CheckboxConfigurableExample = (function () {
 /**
  * \@title Basic checkboxes
  */
-var CheckboxOverviewExample = (function () {
+var CheckboxOverviewExample = /** @class */ (function () {
     function CheckboxOverviewExample() {
     }
     CheckboxOverviewExample.decorators = [
@@ -616,7 +615,7 @@ var CheckboxOverviewExample = (function () {
 /**
  * \@title Chips with input
  */
-var ChipsInputExample = (function () {
+var ChipsInputExample = /** @class */ (function () {
     function ChipsInputExample() {
         this.visible = true;
         this.selectable = true;
@@ -683,7 +682,7 @@ var ChipsInputExample = (function () {
 /**
  * \@title Basic chips
  */
-var ChipsOverviewExample = (function () {
+var ChipsOverviewExample = /** @class */ (function () {
     function ChipsOverviewExample() {
     }
     ChipsOverviewExample.decorators = [
@@ -705,7 +704,7 @@ var ChipsOverviewExample = (function () {
 /**
  * \@title Stacked chips
  */
-var ChipsStackedExample = (function () {
+var ChipsStackedExample = /** @class */ (function () {
     function ChipsStackedExample() {
         this.availableColors = [
             { name: 'none', color: '' },
@@ -733,7 +732,7 @@ var ChipsStackedExample = (function () {
 /**
  * \@title Datepicker open method
  */
-var DatepickerApiExample = (function () {
+var DatepickerApiExample = /** @class */ (function () {
     function DatepickerApiExample() {
     }
     DatepickerApiExample.decorators = [
@@ -755,7 +754,7 @@ var DatepickerApiExample = (function () {
 /**
  * \@title Disabled datepicker
  */
-var DatepickerDisabledExample = (function () {
+var DatepickerDisabledExample = /** @class */ (function () {
     function DatepickerDisabledExample() {
     }
     DatepickerDisabledExample.decorators = [
@@ -777,7 +776,7 @@ var DatepickerDisabledExample = (function () {
 /**
  * \@title Datepicker input and change events
  */
-var DatepickerEventsExample = (function () {
+var DatepickerEventsExample = /** @class */ (function () {
     function DatepickerEventsExample() {
         this.events = [];
     }
@@ -813,7 +812,7 @@ var DatepickerEventsExample = (function () {
 /**
  * \@title Datepicker with filter validation
  */
-var DatepickerFilterExample = (function () {
+var DatepickerFilterExample = /** @class */ (function () {
     function DatepickerFilterExample() {
         this.myFilter = function (d) {
             var /** @type {?} */ day = d.getDay();
@@ -858,7 +857,7 @@ var MY_FORMATS = {
 /**
  * \@title Datepicker with custom formats
  */
-var DatepickerFormatsExample = (function () {
+var DatepickerFormatsExample = /** @class */ (function () {
     function DatepickerFormatsExample() {
         this.date = new FormControl(moment());
     }
@@ -889,7 +888,7 @@ var ɵ0 = MAT_MOMENT_DATE_FORMATS;
 /**
  * \@title Datepicker with different locale
  */
-var DatepickerLocaleExample = (function () {
+var DatepickerLocaleExample = /** @class */ (function () {
     function DatepickerLocaleExample(adapter) {
         this.adapter = adapter;
     }
@@ -933,7 +932,7 @@ var DatepickerLocaleExample = (function () {
 /**
  * \@title Datepicker with min & max validation
  */
-var DatepickerMinMaxExample = (function () {
+var DatepickerMinMaxExample = /** @class */ (function () {
     function DatepickerMinMaxExample() {
         this.minDate = new Date(2000, 0, 1);
         this.maxDate = new Date(2020, 0, 1);
@@ -963,7 +962,7 @@ var ɵ0$1 = MAT_MOMENT_DATE_FORMATS;
 /**
  * \@title Datepicker that uses Moment.js dates
  */
-var DatepickerMomentExample = (function () {
+var DatepickerMomentExample = /** @class */ (function () {
     function DatepickerMomentExample() {
         // Datepicker takes `Moment` objects instead of `Date` objects.
         this.date = new FormControl(moment$1([2017, 0, 1]));
@@ -994,7 +993,7 @@ var DatepickerMomentExample = (function () {
 /**
  * \@title Basic datepicker
  */
-var DatepickerOverviewExample = (function () {
+var DatepickerOverviewExample = /** @class */ (function () {
     function DatepickerOverviewExample() {
     }
     DatepickerOverviewExample.decorators = [
@@ -1016,7 +1015,7 @@ var DatepickerOverviewExample = (function () {
 /**
  * \@title Datepicker start date
  */
-var DatepickerStartViewExample = (function () {
+var DatepickerStartViewExample = /** @class */ (function () {
     function DatepickerStartViewExample() {
         this.startDate = new Date(1990, 0, 1);
     }
@@ -1039,7 +1038,7 @@ var DatepickerStartViewExample = (function () {
 /**
  * \@title Datepicker touch UI
  */
-var DatepickerTouchExample = (function () {
+var DatepickerTouchExample = /** @class */ (function () {
     function DatepickerTouchExample() {
     }
     DatepickerTouchExample.decorators = [
@@ -1061,7 +1060,7 @@ var DatepickerTouchExample = (function () {
 /**
  * \@title Datepicker selected value
  */
-var DatepickerValueExample = (function () {
+var DatepickerValueExample = /** @class */ (function () {
     function DatepickerValueExample() {
         this.date = new FormControl(new Date());
         this.serializedDate = new FormControl((new Date()).toISOString());
@@ -1085,7 +1084,7 @@ var DatepickerValueExample = (function () {
 /**
  * \@title Dialog with header, scrollable content and actions
  */
-var DialogContentExample = (function () {
+var DialogContentExample = /** @class */ (function () {
     function DialogContentExample(dialog) {
         this.dialog = dialog;
     }
@@ -1115,7 +1114,7 @@ var DialogContentExample = (function () {
     ]; };
     return DialogContentExample;
 }());
-var DialogContentExampleDialog = (function () {
+var DialogContentExampleDialog = /** @class */ (function () {
     function DialogContentExampleDialog() {
     }
     DialogContentExampleDialog.decorators = [
@@ -1136,7 +1135,7 @@ var DialogContentExampleDialog = (function () {
 /**
  * \@title Injecting data when opening a dialog
  */
-var DialogDataExample = (function () {
+var DialogDataExample = /** @class */ (function () {
     function DialogDataExample(dialog) {
         this.dialog = dialog;
     }
@@ -1165,7 +1164,7 @@ var DialogDataExample = (function () {
     ]; };
     return DialogDataExample;
 }());
-var DialogDataExampleDialog = (function () {
+var DialogDataExampleDialog = /** @class */ (function () {
     function DialogDataExampleDialog(data) {
         this.data = data;
     }
@@ -1189,7 +1188,7 @@ var DialogDataExampleDialog = (function () {
 /**
  * \@title Dialog elements
  */
-var DialogElementsExample = (function () {
+var DialogElementsExample = /** @class */ (function () {
     function DialogElementsExample(dialog) {
         this.dialog = dialog;
     }
@@ -1214,7 +1213,7 @@ var DialogElementsExample = (function () {
     ]; };
     return DialogElementsExample;
 }());
-var DialogElementsExampleDialog = (function () {
+var DialogElementsExampleDialog = /** @class */ (function () {
     function DialogElementsExampleDialog() {
     }
     DialogElementsExampleDialog.decorators = [
@@ -1235,7 +1234,7 @@ var DialogElementsExampleDialog = (function () {
 /**
  * \@title Dialog Overview
  */
-var DialogOverviewExample = (function () {
+var DialogOverviewExample = /** @class */ (function () {
     function DialogOverviewExample(dialog) {
         this.dialog = dialog;
     }
@@ -1268,7 +1267,7 @@ var DialogOverviewExample = (function () {
     ]; };
     return DialogOverviewExample;
 }());
-var DialogOverviewExampleDialog = (function () {
+var DialogOverviewExampleDialog = /** @class */ (function () {
     function DialogOverviewExampleDialog(dialogRef, data) {
         this.dialogRef = dialogRef;
         this.data = data;
@@ -1303,7 +1302,7 @@ var DialogOverviewExampleDialog = (function () {
 /**
  * \@title Elevation CSS classes
  */
-var ElevationOverviewExample = (function () {
+var ElevationOverviewExample = /** @class */ (function () {
     function ElevationOverviewExample() {
         this.isActive = false;
     }
@@ -1326,7 +1325,7 @@ var ElevationOverviewExample = (function () {
 /**
  * \@title Basic expansion panel
  */
-var ExpansionOverviewExample = (function () {
+var ExpansionOverviewExample = /** @class */ (function () {
     function ExpansionOverviewExample() {
         this.panelOpenState = false;
     }
@@ -1348,7 +1347,7 @@ var ExpansionOverviewExample = (function () {
 /**
  * \@title Expansion panel as accordion
  */
-var ExpansionStepsExample = (function () {
+var ExpansionStepsExample = /** @class */ (function () {
     function ExpansionStepsExample() {
         this.step = 0;
     }
@@ -1400,7 +1399,7 @@ var ExpansionStepsExample = (function () {
 /**
  * Data structure for holding telephone number.
  */
-var MyTel = (function () {
+var MyTel = /** @class */ (function () {
     function MyTel(area, exchange, subscriber) {
         this.area = area;
         this.exchange = exchange;
@@ -1411,7 +1410,7 @@ var MyTel = (function () {
 /**
  * Custom `MatFormFieldControl` for telephone number input.
  */
-var MyTelInput = (function () {
+var MyTelInput = /** @class */ (function () {
     function MyTelInput(fb, fm, elRef) {
         var _this = this;
         this.fm = fm;
@@ -1446,7 +1445,7 @@ var MyTelInput = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(MyTelInput.prototype, "shouldPlaceholderFloat", {
+    Object.defineProperty(MyTelInput.prototype, "shouldLabelFloat", {
         get: /**
          * @return {?}
          */
@@ -1575,7 +1574,7 @@ var MyTelInput = (function () {
                     styles: ["div { display: flex; } input { border: none; background: none; padding: 0; outline: none; font: inherit; text-align: center; } span { opacity: 0; transition: opacity 200ms; } :host.floating span { opacity: 1; } "],
                     providers: [{ provide: MatFormFieldControl, useExisting: MyTelInput }],
                     host: {
-                        '[class.floating]': 'shouldPlaceholderFloat',
+                        '[class.floating]': 'shouldLabelFloat',
                         '[id]': 'id',
                         '[attr.aria-describedby]': 'describedBy',
                     }
@@ -1598,7 +1597,7 @@ var MyTelInput = (function () {
 /**
  * \@title Form field with custom telephone number input control.
  */
-var FormFieldCustomControlExample = (function () {
+var FormFieldCustomControlExample = /** @class */ (function () {
     function FormFieldCustomControlExample() {
     }
     FormFieldCustomControlExample.decorators = [
@@ -1619,7 +1618,7 @@ var FormFieldCustomControlExample = (function () {
 /**
  * \@title Form field with error messages
  */
-var FormFieldErrorExample = (function () {
+var FormFieldErrorExample = /** @class */ (function () {
     function FormFieldErrorExample() {
         this.email = new FormControl('', [Validators.required, Validators.email]);
     }
@@ -1653,7 +1652,7 @@ var FormFieldErrorExample = (function () {
 /**
  * \@title Form field with hints
  */
-var FormFieldHintExample = (function () {
+var FormFieldHintExample = /** @class */ (function () {
     function FormFieldHintExample() {
     }
     FormFieldHintExample.decorators = [
@@ -1673,9 +1672,37 @@ var FormFieldHintExample = (function () {
  * @suppress {checkTypes} checked by tsc
  */
 /**
+ * \@title Form field with label
+ */
+var FormFieldLabelExample = /** @class */ (function () {
+    function FormFieldLabelExample(fb) {
+        this.options = fb.group({
+            hideRequired: false,
+            floatLabel: 'auto',
+        });
+    }
+    FormFieldLabelExample.decorators = [
+        { type: Component, args: [{
+                    selector: 'form-field-label-example',
+                    template: "<div class=\"example-container\"><form class=\"example-container\" [formGroup]=\"options\"><mat-checkbox formControlName=\"hideRequired\">Hide required marker</mat-checkbox><div><label>Float label:</label><mat-radio-group formControlName=\"floatLabel\"><mat-radio-button value=\"auto\">Auto</mat-radio-button><mat-radio-button value=\"always\">Always</mat-radio-button><mat-radio-button value=\"never\">Never</mat-radio-button></mat-radio-group></div></form><mat-form-field [hideRequiredMarker]=\"options.value.hideRequired\" [floatLabel]=\"options.value.floatLabel\"><input matInput placeholder=\"Simple placeholder\" required></mat-form-field><mat-form-field [floatLabel]=\"options.value.floatLabel\"><mat-label>Both a label and a placeholder</mat-label><input matInput placeholder=\"Simple placeholder\"></mat-form-field><mat-form-field [hideRequiredMarker]=\"options.value.hideRequired\" [floatLabel]=\"options.value.floatLabel\"><mat-select required><mat-option>-- None --</mat-option><mat-option value=\"option\">Option</mat-option></mat-select><mat-placeholder><mat-icon>favorite</mat-icon><b>Fancy</b> <i>placeholder</i></mat-placeholder></mat-form-field></div>",
+                    styles: [".example-container { display: flex; flex-direction: column; } .example-container > * { width: 100%; } .example-container form { margin-bottom: 20px; } .example-container form > * { margin: 5px 0; } .example-container .mat-radio-button { margin: 0 5px; } "]
+                },] },
+    ];
+    /** @nocollapse */
+    FormFieldLabelExample.ctorParameters = function () { return [
+        { type: FormBuilder, },
+    ]; };
+    return FormFieldLabelExample;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
  * \@title Simple form field
  */
-var FormFieldOverviewExample = (function () {
+var FormFieldOverviewExample = /** @class */ (function () {
     function FormFieldOverviewExample() {
     }
     FormFieldOverviewExample.decorators = [
@@ -1695,37 +1722,9 @@ var FormFieldOverviewExample = (function () {
  * @suppress {checkTypes} checked by tsc
  */
 /**
- * \@title Form field with placeholder
- */
-var FormFieldPlaceholderExample = (function () {
-    function FormFieldPlaceholderExample(fb) {
-        this.options = fb.group({
-            hideRequired: false,
-            floatPlaceholder: 'auto',
-        });
-    }
-    FormFieldPlaceholderExample.decorators = [
-        { type: Component, args: [{
-                    selector: 'form-field-placeholder-example',
-                    template: "<div class=\"example-container\"><form class=\"example-container\" [formGroup]=\"options\"><mat-checkbox formControlName=\"hideRequired\">Hide required marker</mat-checkbox><div><label>Float placeholder:</label><mat-radio-group formControlName=\"floatPlaceholder\"><mat-radio-button value=\"auto\">Auto</mat-radio-button><mat-radio-button value=\"always\">Always</mat-radio-button><mat-radio-button value=\"never\">Never</mat-radio-button></mat-radio-group></div></form><mat-form-field [hideRequiredMarker]=\"options.value.hideRequired\" [floatPlaceholder]=\"options.value.floatPlaceholder\"><input matInput placeholder=\"Simple placeholder\" required></mat-form-field><mat-form-field [hideRequiredMarker]=\"options.value.hideRequired\" [floatPlaceholder]=\"options.value.floatPlaceholder\"><mat-select required><mat-option>-- None --</mat-option><mat-option value=\"option\">Option</mat-option></mat-select><mat-placeholder><mat-icon>favorite</mat-icon><b>Fancy</b> <i>placeholder</i></mat-placeholder></mat-form-field></div>",
-                    styles: [".example-container { display: flex; flex-direction: column; } .example-container > * { width: 100%; } .example-container form { margin-bottom: 20px; } .example-container form > * { margin: 5px 0; } .example-container .mat-radio-button { margin: 0 5px; } "]
-                },] },
-    ];
-    /** @nocollapse */
-    FormFieldPlaceholderExample.ctorParameters = function () { return [
-        { type: FormBuilder, },
-    ]; };
-    return FormFieldPlaceholderExample;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-/**
  * \@title Form field with prefix & suffix
  */
-var FormFieldPrefixSuffixExample = (function () {
+var FormFieldPrefixSuffixExample = /** @class */ (function () {
     function FormFieldPrefixSuffixExample() {
         this.hide = true;
     }
@@ -1733,7 +1732,7 @@ var FormFieldPrefixSuffixExample = (function () {
         { type: Component, args: [{
                     selector: 'form-field-prefix-suffix-example',
                     template: "<div class=\"example-container\"><mat-form-field><input matInput placeholder=\"Enter your password\" [type]=\"hide ? 'password' : 'text'\"><mat-icon matSuffix (click)=\"hide = !hide\">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon></mat-form-field><mat-form-field><input matInput placeholder=\"Amount\" type=\"number\" class=\"example-right-align\"> <span matPrefix>$&nbsp;</span> <span matSuffix>.00</span></mat-form-field></div>",
-                    styles: [".example-container { display: flex; flex-direction: column; } .example-container > * { width: 100%; } .example-right-align { text-align: right; } input.example-right-align::-webkit-outer-spin-button, input.example-right-align::-webkit-inner-spin-button { display: none; } "]
+                    styles: [".example-container { display: flex; flex-direction: column; } .example-container > * { width: 100%; } .example-right-align { text-align: right; } input.example-right-align::-webkit-outer-spin-button, input.example-right-align::-webkit-inner-spin-button { display: none; } input.example-right-align { -moz-appearance: textfield; } "]
                 },] },
     ];
     /** @nocollapse */
@@ -1748,7 +1747,7 @@ var FormFieldPrefixSuffixExample = (function () {
 /**
  * \@title Form field theming
  */
-var FormFieldThemingExample = (function () {
+var FormFieldThemingExample = /** @class */ (function () {
     function FormFieldThemingExample(fb) {
         this.options = fb.group({
             'color': 'primary',
@@ -1785,7 +1784,7 @@ var FormFieldThemingExample = (function () {
 /**
  * \@title Dynamic grid-list
  */
-var GridListDynamicExample = (function () {
+var GridListDynamicExample = /** @class */ (function () {
     function GridListDynamicExample() {
         this.tiles = [
             { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
@@ -1812,7 +1811,7 @@ var GridListDynamicExample = (function () {
 /**
  * \@title Basic grid-list
  */
-var GridListOverviewExample = (function () {
+var GridListOverviewExample = /** @class */ (function () {
     function GridListOverviewExample() {
     }
     GridListOverviewExample.decorators = [
@@ -1834,7 +1833,7 @@ var GridListOverviewExample = (function () {
 /**
  * \@title Basic icons
  */
-var IconOverviewExample = (function () {
+var IconOverviewExample = /** @class */ (function () {
     function IconOverviewExample() {
     }
     IconOverviewExample.decorators = [
@@ -1855,7 +1854,7 @@ var IconOverviewExample = (function () {
 /**
  * \@title SVG icons
  */
-var IconSvgExample = (function () {
+var IconSvgExample = /** @class */ (function () {
     function IconSvgExample(iconRegistry, sanitizer) {
         iconRegistry.addSvgIcon('thumbs-up', sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg'));
     }
@@ -1880,7 +1879,7 @@ var IconSvgExample = (function () {
 /**
  * \@title Auto-resizing textarea
  */
-var InputAutosizeTextareaExample = (function () {
+var InputAutosizeTextareaExample = /** @class */ (function () {
     function InputAutosizeTextareaExample() {
     }
     InputAutosizeTextareaExample.decorators = [
@@ -1902,7 +1901,7 @@ var InputAutosizeTextareaExample = (function () {
 /**
  * \@title Input with a clear button
  */
-var InputClearableExample = (function () {
+var InputClearableExample = /** @class */ (function () {
     function InputClearableExample() {
         this.value = 'Clear me';
     }
@@ -1925,7 +1924,7 @@ var InputClearableExample = (function () {
 /**
  * Error when invalid control is dirty, touched, or submitted.
  */
-var MyErrorStateMatcher = (function () {
+var MyErrorStateMatcher = /** @class */ (function () {
     function MyErrorStateMatcher() {
     }
     /**
@@ -1947,7 +1946,7 @@ var MyErrorStateMatcher = (function () {
 /**
  * \@title Input with a custom ErrorStateMatcher
  */
-var InputErrorStateMatcherExample = (function () {
+var InputErrorStateMatcherExample = /** @class */ (function () {
     function InputErrorStateMatcherExample() {
         this.emailFormControl = new FormControl('', [
             Validators.required,
@@ -1974,7 +1973,7 @@ var InputErrorStateMatcherExample = (function () {
 /**
  * \@title Input with error messages
  */
-var InputErrorsExample = (function () {
+var InputErrorsExample = /** @class */ (function () {
     function InputErrorsExample() {
         this.emailFormControl = new FormControl('', [
             Validators.required,
@@ -2000,7 +1999,7 @@ var InputErrorsExample = (function () {
 /**
  * \@title Inputs in a form
  */
-var InputFormExample = (function () {
+var InputFormExample = /** @class */ (function () {
     function InputFormExample() {
     }
     InputFormExample.decorators = [
@@ -2022,7 +2021,7 @@ var InputFormExample = (function () {
 /**
  * \@title Input with hints
  */
-var InputHintExample = (function () {
+var InputHintExample = /** @class */ (function () {
     function InputHintExample() {
     }
     InputHintExample.decorators = [
@@ -2044,7 +2043,7 @@ var InputHintExample = (function () {
 /**
  * \@title Basic Inputs
  */
-var InputOverviewExample = (function () {
+var InputOverviewExample = /** @class */ (function () {
     function InputOverviewExample() {
     }
     InputOverviewExample.decorators = [
@@ -2066,7 +2065,7 @@ var InputOverviewExample = (function () {
 /**
  * \@title Inputs with prefixes and suffixes
  */
-var InputPrefixSuffixExample = (function () {
+var InputPrefixSuffixExample = /** @class */ (function () {
     function InputPrefixSuffixExample() {
     }
     InputPrefixSuffixExample.decorators = [
@@ -2088,13 +2087,13 @@ var InputPrefixSuffixExample = (function () {
 /**
  * \@title Basic list
  */
-var ListOverviewExample = (function () {
+var ListOverviewExample = /** @class */ (function () {
     function ListOverviewExample() {
     }
     ListOverviewExample.decorators = [
         { type: Component, args: [{
                     selector: 'list-overview-example',
-                    template: "<mat-list><mat-list-item>Item 1</mat-list-item><mat-list-item>Item 2</mat-list-item><mat-list-item>Item 3</mat-list-item></mat-list>",
+                    template: "<mat-list role=\"list\"><mat-list-item role=\"listitem\">Item 1</mat-list-item><mat-list-item role=\"listitem\">Item 2</mat-list-item><mat-list-item role=\"listitem\">Item 3</mat-list-item></mat-list>",
                 },] },
     ];
     /** @nocollapse */
@@ -2109,7 +2108,7 @@ var ListOverviewExample = (function () {
 /**
  * \@title List with sections
  */
-var ListSectionsExample = (function () {
+var ListSectionsExample = /** @class */ (function () {
     function ListSectionsExample() {
         this.folders = [
             {
@@ -2155,7 +2154,7 @@ var ListSectionsExample = (function () {
 /**
  * \@title List with selection
  */
-var ListSelectionExample = (function () {
+var ListSelectionExample = /** @class */ (function () {
     function ListSelectionExample() {
         this.typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
     }
@@ -2178,7 +2177,7 @@ var ListSelectionExample = (function () {
 /**
  * \@title Menu with icons
  */
-var MenuIconsExample = (function () {
+var MenuIconsExample = /** @class */ (function () {
     function MenuIconsExample() {
     }
     MenuIconsExample.decorators = [
@@ -2200,7 +2199,7 @@ var MenuIconsExample = (function () {
 /**
  * \@title Basic menu
  */
-var MenuOverviewExample = (function () {
+var MenuOverviewExample = /** @class */ (function () {
     function MenuOverviewExample() {
     }
     MenuOverviewExample.decorators = [
@@ -2222,7 +2221,7 @@ var MenuOverviewExample = (function () {
 /**
  * \@title Nested menu
  */
-var NestedMenuExample = (function () {
+var NestedMenuExample = /** @class */ (function () {
     function NestedMenuExample() {
     }
     NestedMenuExample.decorators = [
@@ -2244,7 +2243,7 @@ var NestedMenuExample = (function () {
 /**
  * \@title Configurable paginator
  */
-var PaginatorConfigurableExample = (function () {
+var PaginatorConfigurableExample = /** @class */ (function () {
     function PaginatorConfigurableExample() {
         // MatPaginator Inputs
         this.length = 100;
@@ -2280,7 +2279,7 @@ var PaginatorConfigurableExample = (function () {
 /**
  * \@title Paginator
  */
-var PaginatorOverviewExample = (function () {
+var PaginatorOverviewExample = /** @class */ (function () {
     function PaginatorOverviewExample() {
     }
     PaginatorOverviewExample.decorators = [
@@ -2301,7 +2300,7 @@ var PaginatorOverviewExample = (function () {
 /**
  * \@title Buffer progress-bar
  */
-var ProgressBarBufferExample = (function () {
+var ProgressBarBufferExample = /** @class */ (function () {
     function ProgressBarBufferExample() {
     }
     ProgressBarBufferExample.decorators = [
@@ -2322,7 +2321,7 @@ var ProgressBarBufferExample = (function () {
 /**
  * \@title Configurable progress-bar
  */
-var ProgressBarConfigurableExample = (function () {
+var ProgressBarConfigurableExample = /** @class */ (function () {
     function ProgressBarConfigurableExample() {
         this.color = 'primary';
         this.mode = 'determinate';
@@ -2348,7 +2347,7 @@ var ProgressBarConfigurableExample = (function () {
 /**
  * \@title Determinate progress-bar
  */
-var ProgressBarDeterminateExample = (function () {
+var ProgressBarDeterminateExample = /** @class */ (function () {
     function ProgressBarDeterminateExample() {
     }
     ProgressBarDeterminateExample.decorators = [
@@ -2369,7 +2368,7 @@ var ProgressBarDeterminateExample = (function () {
 /**
  * \@title Indeterminate progress-bar
  */
-var ProgressBarIndeterminateExample = (function () {
+var ProgressBarIndeterminateExample = /** @class */ (function () {
     function ProgressBarIndeterminateExample() {
     }
     ProgressBarIndeterminateExample.decorators = [
@@ -2390,7 +2389,7 @@ var ProgressBarIndeterminateExample = (function () {
 /**
  * \@title Query progress-bar
  */
-var ProgressBarQueryExample = (function () {
+var ProgressBarQueryExample = /** @class */ (function () {
     function ProgressBarQueryExample() {
     }
     ProgressBarQueryExample.decorators = [
@@ -2411,7 +2410,7 @@ var ProgressBarQueryExample = (function () {
 /**
  * \@title Configurable progress spinner
  */
-var ProgressSpinnerConfigurableExample = (function () {
+var ProgressSpinnerConfigurableExample = /** @class */ (function () {
     function ProgressSpinnerConfigurableExample() {
         this.color = 'primary';
         this.mode = 'determinate';
@@ -2436,7 +2435,7 @@ var ProgressSpinnerConfigurableExample = (function () {
 /**
  * \@title Basic progress-spinner
  */
-var ProgressSpinnerOverviewExample = (function () {
+var ProgressSpinnerOverviewExample = /** @class */ (function () {
     function ProgressSpinnerOverviewExample() {
     }
     ProgressSpinnerOverviewExample.decorators = [
@@ -2457,7 +2456,7 @@ var ProgressSpinnerOverviewExample = (function () {
 /**
  * \@title Radios with ngModel
  */
-var RadioNgModelExample = (function () {
+var RadioNgModelExample = /** @class */ (function () {
     function RadioNgModelExample() {
         this.seasons = [
             'Winter',
@@ -2485,7 +2484,7 @@ var RadioNgModelExample = (function () {
 /**
  * \@title Basic radios
  */
-var RadioOverviewExample = (function () {
+var RadioOverviewExample = /** @class */ (function () {
     function RadioOverviewExample() {
     }
     RadioOverviewExample.decorators = [
@@ -2507,7 +2506,7 @@ var RadioOverviewExample = (function () {
 /**
  * \@title Select with custom trigger text
  */
-var SelectCustomTriggerExample = (function () {
+var SelectCustomTriggerExample = /** @class */ (function () {
     function SelectCustomTriggerExample() {
         this.toppings = new FormControl();
         this.toppingList = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
@@ -2531,7 +2530,7 @@ var SelectCustomTriggerExample = (function () {
 /**
  * \@title Disabled select
  */
-var SelectDisabledExample = (function () {
+var SelectDisabledExample = /** @class */ (function () {
     function SelectDisabledExample() {
         this.disableSelect = new FormControl(false);
     }
@@ -2554,7 +2553,7 @@ var SelectDisabledExample = (function () {
 /**
  * Error when invalid control is dirty, touched, or submitted.
  */
-var MyErrorStateMatcher$1 = (function () {
+var MyErrorStateMatcher$1 = /** @class */ (function () {
     function MyErrorStateMatcher() {
     }
     /**
@@ -2576,7 +2575,7 @@ var MyErrorStateMatcher$1 = (function () {
 /**
  * \@title Select with a custom ErrorStateMatcher
  */
-var SelectErrorStateMatcherExample = (function () {
+var SelectErrorStateMatcherExample = /** @class */ (function () {
     function SelectErrorStateMatcherExample() {
         this.selected = new FormControl('valid', [
             Validators.required,
@@ -2603,7 +2602,7 @@ var SelectErrorStateMatcherExample = (function () {
 /**
  * \@title Select in a form
  */
-var SelectFormExample = (function () {
+var SelectFormExample = /** @class */ (function () {
     function SelectFormExample() {
         this.foods = [
             { value: 'steak-0', viewValue: 'Steak' },
@@ -2630,7 +2629,7 @@ var SelectFormExample = (function () {
 /**
  * \@title Select with form field features
  */
-var SelectHintErrorExample = (function () {
+var SelectHintErrorExample = /** @class */ (function () {
     function SelectHintErrorExample() {
         this.animalControl = new FormControl('', [Validators.required]);
         this.animals = [
@@ -2659,7 +2658,7 @@ var SelectHintErrorExample = (function () {
 /**
  * \@title Select with multiple selection
  */
-var SelectMultipleExample = (function () {
+var SelectMultipleExample = /** @class */ (function () {
     function SelectMultipleExample() {
         this.toppings = new FormControl();
         this.toppingList = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
@@ -2683,7 +2682,7 @@ var SelectMultipleExample = (function () {
 /**
  * \@title Select with no option ripple
  */
-var SelectNoRippleExample = (function () {
+var SelectNoRippleExample = /** @class */ (function () {
     function SelectNoRippleExample() {
     }
     SelectNoRippleExample.decorators = [
@@ -2705,7 +2704,7 @@ var SelectNoRippleExample = (function () {
 /**
  * \@title Select with option groups
  */
-var SelectOptgroupExample = (function () {
+var SelectOptgroupExample = /** @class */ (function () {
     function SelectOptgroupExample() {
         this.pokemonControl = new FormControl();
         this.pokemonGroups = [
@@ -2762,7 +2761,7 @@ var SelectOptgroupExample = (function () {
 /**
  * \@title Basic select
  */
-var SelectOverviewExample = (function () {
+var SelectOverviewExample = /** @class */ (function () {
     function SelectOverviewExample() {
         this.foods = [
             { value: 'steak-0', viewValue: 'Steak' },
@@ -2789,7 +2788,7 @@ var SelectOverviewExample = (function () {
 /**
  * \@title Select with custom panel styling
  */
-var SelectPanelClassExample = (function () {
+var SelectPanelClassExample = /** @class */ (function () {
     function SelectPanelClassExample() {
         this.panelColor = new FormControl('red');
     }
@@ -2813,7 +2812,7 @@ var SelectPanelClassExample = (function () {
 /**
  * \@title Select with reset option
  */
-var SelectResetExample = (function () {
+var SelectResetExample = /** @class */ (function () {
     function SelectResetExample() {
         this.states = [
             'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -2844,7 +2843,7 @@ var SelectResetExample = (function () {
 /**
  * \@title Select with 2-way value binding
  */
-var SelectValueBindingExample = (function () {
+var SelectValueBindingExample = /** @class */ (function () {
     function SelectValueBindingExample() {
         this.selected = 'option2';
     }
@@ -2865,9 +2864,32 @@ var SelectValueBindingExample = (function () {
  * @suppress {checkTypes} checked by tsc
  */
 /**
+ * \@title Autosize sidenav
+ */
+var SidenavAutosizeExample = /** @class */ (function () {
+    function SidenavAutosizeExample() {
+        this.showFiller = false;
+    }
+    SidenavAutosizeExample.decorators = [
+        { type: Component, args: [{
+                    selector: 'sidenav-autosize-example',
+                    template: "<mat-drawer-container class=\"example-container\" autosize><mat-drawer #drawer class=\"example-sidenav\" mode=\"side\"><p>Auto-resizing sidenav</p><p *ngIf=\"showFiller\">Lorem, ipsum dolor sit amet consectetur.</p><button (click)=\"showFiller = !showFiller\" mat-raised-button>Toggle extra text</button></mat-drawer><div class=\"example-sidenav-content\"><button type=\"button\" mat-button (click)=\"drawer.toggle()\">Toggle sidenav</button></div></mat-drawer-container>",
+                    styles: [".example-container { width: 500px; height: 300px; border: 1px solid rgba(0, 0, 0, 0.5); } .example-sidenav-content { display: flex; height: 100%; align-items: center; justify-content: center; } .example-sidenav { padding: 20px; } "],
+                },] },
+    ];
+    /** @nocollapse */
+    SidenavAutosizeExample.ctorParameters = function () { return []; };
+    return SidenavAutosizeExample;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+/**
  * \@title Sidenav with custom escape and backdrop click behavior
  */
-var SidenavDisableCloseExample = (function () {
+var SidenavDisableCloseExample = /** @class */ (function () {
     function SidenavDisableCloseExample() {
         this.reason = '';
         this.shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(function (h) { return h.test(window.location.host); });
@@ -2887,7 +2909,7 @@ var SidenavDisableCloseExample = (function () {
     SidenavDisableCloseExample.decorators = [
         { type: Component, args: [{
                     selector: 'sidenav-disable-close-example',
-                    template: "<mat-sidenav-container class=\"example-container\" (backdropClick)=\"close('backdrop')\" *ngIf=\"shouldRun\"><mat-sidenav #sidenav (keydown.escape)=\"close('escape')\" disableClose><p><button mat-button (click)=\"close('toggle button')\">Toggle</button></p></mat-sidenav><mat-sidenav-content><p><button mat-button (click)=\"sidenav.open()\">Open</button></p><p>Closed due to: {{reason}}</p></mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open in Plunker to see result</div>",
+                    template: "<mat-sidenav-container class=\"example-container\" (backdropClick)=\"close('backdrop')\" *ngIf=\"shouldRun\"><mat-sidenav #sidenav (keydown.escape)=\"close('escape')\" disableClose><p><button mat-button (click)=\"close('toggle button')\">Toggle</button></p></mat-sidenav><mat-sidenav-content><p><button mat-button (click)=\"sidenav.open()\">Open</button></p><p>Closed due to: {{reason}}</p></mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open on Stackblitz to see result</div>",
                     styles: [".example-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; } "],
                 },] },
     ];
@@ -2906,7 +2928,7 @@ var SidenavDisableCloseExample = (function () {
 /**
  * \@title Basic drawer
  */
-var SidenavDrawerOverviewExample = (function () {
+var SidenavDrawerOverviewExample = /** @class */ (function () {
     function SidenavDrawerOverviewExample() {
     }
     SidenavDrawerOverviewExample.decorators = [
@@ -2928,7 +2950,7 @@ var SidenavDrawerOverviewExample = (function () {
 /**
  * \@title Fixed sidenav
  */
-var SidenavFixedExample = (function () {
+var SidenavFixedExample = /** @class */ (function () {
     function SidenavFixedExample(fb) {
         this.shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(function (h) { return h.test(window.location.host); });
         this.options = fb.group({
@@ -2940,7 +2962,7 @@ var SidenavFixedExample = (function () {
     SidenavFixedExample.decorators = [
         { type: Component, args: [{
                     selector: 'sidenav-fixed-example',
-                    template: "<ng-container *ngIf=\"shouldRun\"><mat-toolbar class=\"example-header\">Header</mat-toolbar><mat-sidenav-container class=\"example-container\"><mat-sidenav #sidenav mode=\"side\" opened=\"true\" class=\"example-sidenav\" [fixedInViewport]=\"options.value.fixed\" [fixedTopGap]=\"options.value.top\" [fixedBottomGap]=\"options.value.bottom\">{{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav</mat-sidenav><mat-sidenav-content [formGroup]=\"options\"><p><mat-checkbox formControlName=\"fixed\">Fixed</mat-checkbox></p><p><mat-form-field><input matInput type=\"number\" formControlName=\"top\" placeholder=\"Top gap\"></mat-form-field></p><p><mat-form-field><input matInput type=\"number\" formControlName=\"bottom\" placeholder=\"Bottom gap\"></mat-form-field></p><p><button mat-button (click)=\"sidenav.toggle()\">Toggle</button></p></mat-sidenav-content></mat-sidenav-container><mat-toolbar class=\"example-footer\">Footer</mat-toolbar></ng-container><div *ngIf=\"!shouldRun\">Please open in Plunker to see result</div>",
+                    template: "<ng-container *ngIf=\"shouldRun\"><mat-toolbar class=\"example-header\">Header</mat-toolbar><mat-sidenav-container class=\"example-container\"><mat-sidenav #sidenav mode=\"side\" opened=\"true\" class=\"example-sidenav\" [fixedInViewport]=\"options.value.fixed\" [fixedTopGap]=\"options.value.top\" [fixedBottomGap]=\"options.value.bottom\">{{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav</mat-sidenav><mat-sidenav-content [formGroup]=\"options\"><p><mat-checkbox formControlName=\"fixed\">Fixed</mat-checkbox></p><p><mat-form-field><input matInput type=\"number\" formControlName=\"top\" placeholder=\"Top gap\"></mat-form-field></p><p><mat-form-field><input matInput type=\"number\" formControlName=\"bottom\" placeholder=\"Bottom gap\"></mat-form-field></p><p><button mat-button (click)=\"sidenav.toggle()\">Toggle</button></p></mat-sidenav-content></mat-sidenav-container><mat-toolbar class=\"example-footer\">Footer</mat-toolbar></ng-container><div *ngIf=\"!shouldRun\">Please open on Stackblitz to see result</div>",
                     styles: [".example-container { position: absolute; top: 60px; bottom: 60px; left: 0; right: 0; } .example-sidenav { display: flex; align-items: center; justify-content: center; width: 200px; background: rgba(255, 0, 0, 0.5); } .example-header { position: fixed; top: 0; left: 0; right: 0; } .example-footer { position: fixed; bottom: 0; left: 0; right: 0; } "],
                 },] },
     ];
@@ -2958,7 +2980,7 @@ var SidenavFixedExample = (function () {
 /**
  * \@title Sidenav with configurable mode
  */
-var SidenavModeExample = (function () {
+var SidenavModeExample = /** @class */ (function () {
     function SidenavModeExample() {
         this.mode = new FormControl('over');
         this.shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(function (h) { return h.test(window.location.host); });
@@ -2966,7 +2988,7 @@ var SidenavModeExample = (function () {
     SidenavModeExample.decorators = [
         { type: Component, args: [{
                     selector: 'sidenav-mode-example',
-                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav #sidenav [mode]=\"mode.value\"><p><button mat-button (click)=\"sidenav.toggle()\">Toggle</button></p><p><mat-radio-group class=\"example-radio-group\" [formControl]=\"mode\"><label>Mode:</label><mat-radio-button value=\"over\">Over</mat-radio-button><mat-radio-button value=\"side\">Side</mat-radio-button><mat-radio-button value=\"push\">Push</mat-radio-button></mat-radio-group></p></mat-sidenav><mat-sidenav-content><p><button mat-button (click)=\"sidenav.toggle()\">Toggle</button></p><p><mat-radio-group class=\"example-radio-group\" [formControl]=\"mode\"><label>Mode:</label><mat-radio-button value=\"over\">Over</mat-radio-button><mat-radio-button value=\"side\">Side</mat-radio-button><mat-radio-button value=\"push\">Push</mat-radio-button></mat-radio-group></p></mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open in Plunker to see result</div>",
+                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav #sidenav [mode]=\"mode.value\"><p><button mat-button (click)=\"sidenav.toggle()\">Toggle</button></p><p><mat-radio-group class=\"example-radio-group\" [formControl]=\"mode\"><label>Mode:</label><mat-radio-button value=\"over\">Over</mat-radio-button><mat-radio-button value=\"side\">Side</mat-radio-button><mat-radio-button value=\"push\">Push</mat-radio-button></mat-radio-group></p></mat-sidenav><mat-sidenav-content><p><button mat-button (click)=\"sidenav.toggle()\">Toggle</button></p><p><mat-radio-group class=\"example-radio-group\" [formControl]=\"mode\"><label>Mode:</label><mat-radio-button value=\"over\">Over</mat-radio-button><mat-radio-button value=\"side\">Side</mat-radio-button><mat-radio-button value=\"push\">Push</mat-radio-button></mat-radio-group></p></mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open on Stackblitz to see result</div>",
                     styles: [".example-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; } .example-radio-group { display: block; border: 1px solid #555; margin: 20px; padding: 10px; } "],
                 },] },
     ];
@@ -2982,7 +3004,7 @@ var SidenavModeExample = (function () {
 /**
  * \@title Sidenav open & close behavior
  */
-var SidenavOpenCloseExample = (function () {
+var SidenavOpenCloseExample = /** @class */ (function () {
     function SidenavOpenCloseExample() {
         this.events = [];
         this.shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(function (h) { return h.test(window.location.host); });
@@ -2990,7 +3012,7 @@ var SidenavOpenCloseExample = (function () {
     SidenavOpenCloseExample.decorators = [
         { type: Component, args: [{
                     selector: 'sidenav-open-close-example',
-                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav #sidenav mode=\"side\" [(opened)]=\"opened\" (opened)=\"events.push('open!')\" (closed)=\"events.push('close!')\">Sidenav content</mat-sidenav><mat-sidenav-content><p><mat-checkbox [(ngModel)]=\"opened\">sidenav.opened</mat-checkbox></p><p><button mat-button (click)=\"sidenav.toggle()\">sidenav.toggle()</button></p><p>Events:</p><div class=\"example-events\"><div *ngFor=\"let e of events\">{{e}}</div></div></mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open in Plunker to see result</div>",
+                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav #sidenav mode=\"side\" [(opened)]=\"opened\" (opened)=\"events.push('open!')\" (closed)=\"events.push('close!')\">Sidenav content</mat-sidenav><mat-sidenav-content><p><mat-checkbox [(ngModel)]=\"opened\">sidenav.opened</mat-checkbox></p><p><button mat-button (click)=\"sidenav.toggle()\">sidenav.toggle()</button></p><p>Events:</p><div class=\"example-events\"><div *ngFor=\"let e of events\">{{e}}</div></div></mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open on Stackblitz to see result</div>",
                     styles: [".example-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; } .example-events { width: 300px; height: 200px; overflow: auto; border: 1px solid #555; } "],
                 },] },
     ];
@@ -3006,14 +3028,14 @@ var SidenavOpenCloseExample = (function () {
 /**
  * \@title Basic sidenav
  */
-var SidenavOverviewExample = (function () {
+var SidenavOverviewExample = /** @class */ (function () {
     function SidenavOverviewExample() {
         this.shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(function (h) { return h.test(window.location.host); });
     }
     SidenavOverviewExample.decorators = [
         { type: Component, args: [{
                     selector: 'sidenav-overview-example',
-                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav mode=\"side\" opened=\"true\">Sidenav content</mat-sidenav><mat-sidenav-content>Main content</mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open in Plunker to see result</div>",
+                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav mode=\"side\" opened=\"true\">Sidenav content</mat-sidenav><mat-sidenav-content>Main content</mat-sidenav-content></mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open on Stackblitz to see result</div>",
                     styles: [".example-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; } "],
                 },] },
     ];
@@ -3029,14 +3051,14 @@ var SidenavOverviewExample = (function () {
 /**
  * \@title Implicit main content with two sidenavs
  */
-var SidenavPositionExample = (function () {
+var SidenavPositionExample = /** @class */ (function () {
     function SidenavPositionExample() {
         this.shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(function (h) { return h.test(window.location.host); });
     }
     SidenavPositionExample.decorators = [
         { type: Component, args: [{
                     selector: 'sidenav-position-example',
-                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav opened mode=\"side\">Start content</mat-sidenav><mat-sidenav opened mode=\"side\" position=\"end\">End content</mat-sidenav>Implicit main content</mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open in Plunker to see result</div>",
+                    template: "<mat-sidenav-container class=\"example-container\" *ngIf=\"shouldRun\"><mat-sidenav opened mode=\"side\">Start content</mat-sidenav><mat-sidenav opened mode=\"side\" position=\"end\">End content</mat-sidenav>Implicit main content</mat-sidenav-container><div *ngIf=\"!shouldRun\">Please open on Stackblitz to see result</div>",
                     styles: [".example-container { position: absolute; top: 0; bottom: 0; left: 0; right: 0; } "],
                 },] },
     ];
@@ -3052,7 +3074,7 @@ var SidenavPositionExample = (function () {
 /**
  * \@title Responsive sidenav
  */
-var SidenavResponsiveExample = (function () {
+var SidenavResponsiveExample = /** @class */ (function () {
     function SidenavResponsiveExample(changeDetectorRef, media) {
         this.fillerNav = Array(50).fill(0).map(function (_, i) { return "Nav Item " + (i + 1); });
         this.fillerContent = Array(50).fill(0).map(function () {
@@ -3075,7 +3097,7 @@ var SidenavResponsiveExample = (function () {
     SidenavResponsiveExample.decorators = [
         { type: Component, args: [{
                     selector: 'sidenav-responsive-example',
-                    template: "<div class=\"example-container\" [class.example-is-mobile]=\"mobileQuery.matches\" *ngIf=\"shouldRun\"><mat-toolbar color=\"primary\" class=\"example-toolbar\"><button mat-icon-button (click)=\"snav.toggle()\"><mat-icon>menu</mat-icon></button><h1 class=\"example-app-name\">Responsive App</h1></mat-toolbar><mat-sidenav-container class=\"example-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\"><mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [fixedInViewport]=\"mobileQuery.matches\" fixedTopGap=\"56\"><mat-nav-list><a mat-list-item routerLink=\".\" *ngFor=\"let nav of fillerNav\">{{nav}}</a></mat-nav-list></mat-sidenav><mat-sidenav-content><p *ngFor=\"let content of fillerContent\">{{content}}</p></mat-sidenav-content></mat-sidenav-container></div><div *ngIf=\"!shouldRun\">Please open in Plunker to see result</div>",
+                    template: "<div class=\"example-container\" [class.example-is-mobile]=\"mobileQuery.matches\" *ngIf=\"shouldRun\"><mat-toolbar color=\"primary\" class=\"example-toolbar\"><button mat-icon-button (click)=\"snav.toggle()\"><mat-icon>menu</mat-icon></button><h1 class=\"example-app-name\">Responsive App</h1></mat-toolbar><mat-sidenav-container class=\"example-sidenav-container\" [style.marginTop.px]=\"mobileQuery.matches ? 56 : 0\"><mat-sidenav #snav [mode]=\"mobileQuery.matches ? 'over' : 'side'\" [fixedInViewport]=\"mobileQuery.matches\" fixedTopGap=\"56\"><mat-nav-list><a mat-list-item routerLink=\".\" *ngFor=\"let nav of fillerNav\">{{nav}}</a></mat-nav-list></mat-sidenav><mat-sidenav-content><p *ngFor=\"let content of fillerContent\">{{content}}</p></mat-sidenav-content></mat-sidenav-container></div><div *ngIf=\"!shouldRun\">Please open on Stackblitz to see result</div>",
                     styles: [".example-container { display: flex; flex-direction: column; position: absolute; top: 0; bottom: 0; left: 0; right: 0; } .example-is-mobile .example-toolbar { position: fixed; /* Make sure the toolbar will stay on top of the content as it scrolls past. */ z-index: 2; } h1.example-app-name { margin-left: 8px; } .example-sidenav-container { /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */ flex: 1; } .example-is-mobile .example-sidenav-container { /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the `<body>` to be our scrolling element for mobile layouts. */ flex: 1 0 auto; } "],
                 },] },
     ];
@@ -3094,7 +3116,7 @@ var SidenavResponsiveExample = (function () {
 /**
  * \@title Configurable slide-toggle
  */
-var SlideToggleConfigurableExample = (function () {
+var SlideToggleConfigurableExample = /** @class */ (function () {
     function SlideToggleConfigurableExample() {
         this.color = 'accent';
         this.checked = false;
@@ -3119,7 +3141,7 @@ var SlideToggleConfigurableExample = (function () {
 /**
  * \@title Slide-toggle with forms
  */
-var SlideToggleFormsExample = (function () {
+var SlideToggleFormsExample = /** @class */ (function () {
     function SlideToggleFormsExample(formBuilder) {
         this.isChecked = true;
         this.formGroup = formBuilder.group({
@@ -3159,7 +3181,7 @@ var SlideToggleFormsExample = (function () {
 /**
  * \@title Basic slide-toggles
  */
-var SlideToggleOverviewExample = (function () {
+var SlideToggleOverviewExample = /** @class */ (function () {
     function SlideToggleOverviewExample() {
     }
     SlideToggleOverviewExample.decorators = [
@@ -3180,7 +3202,7 @@ var SlideToggleOverviewExample = (function () {
 /**
  * \@title Configurable slider
  */
-var SliderConfigurableExample = (function () {
+var SliderConfigurableExample = /** @class */ (function () {
     function SliderConfigurableExample() {
         this.autoTicks = false;
         this.disabled = false;
@@ -3232,7 +3254,7 @@ var SliderConfigurableExample = (function () {
 /**
  * \@title Basic slider
  */
-var SliderOverviewExample = (function () {
+var SliderOverviewExample = /** @class */ (function () {
     function SliderOverviewExample() {
     }
     SliderOverviewExample.decorators = [
@@ -3254,7 +3276,7 @@ var SliderOverviewExample = (function () {
 /**
  * \@title Snack-bar with a custom component
  */
-var SnackBarComponentExample = (function () {
+var SnackBarComponentExample = /** @class */ (function () {
     function SnackBarComponentExample(snackBar) {
         this.snackBar = snackBar;
     }
@@ -3281,7 +3303,7 @@ var SnackBarComponentExample = (function () {
     ]; };
     return SnackBarComponentExample;
 }());
-var PizzaPartyComponent = (function () {
+var PizzaPartyComponent = /** @class */ (function () {
     function PizzaPartyComponent() {
     }
     PizzaPartyComponent.decorators = [
@@ -3303,7 +3325,7 @@ var PizzaPartyComponent = (function () {
 /**
  * \@title Basic snack-bar
  */
-var SnackBarOverviewExample = (function () {
+var SnackBarOverviewExample = /** @class */ (function () {
     function SnackBarOverviewExample(snackBar) {
         this.snackBar = snackBar;
     }
@@ -3342,7 +3364,7 @@ var SnackBarOverviewExample = (function () {
 /**
  * \@title Sorting overview
  */
-var SortOverviewExample = (function () {
+var SortOverviewExample = /** @class */ (function () {
     function SortOverviewExample() {
         this.desserts = [
             { name: 'Frozen yogurt', calories: '159', fat: '6', carbs: '24', protein: '4' },
@@ -3407,7 +3429,7 @@ function compare(a, b, isAsc) {
 /**
  * \@title Stepper overview
  */
-var StepperOverviewExample = (function () {
+var StepperOverviewExample = /** @class */ (function () {
     function StepperOverviewExample(_formBuilder) {
         this._formBuilder = _formBuilder;
         this.isLinear = false;
@@ -3447,7 +3469,7 @@ var StepperOverviewExample = (function () {
 /**
  * \@title Basic table
  */
-var TableBasicExample = (function () {
+var TableBasicExample = /** @class */ (function () {
     function TableBasicExample() {
         this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
         this.dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -3497,7 +3519,7 @@ var ELEMENT_DATA = [
 /**
  * \@title Table with filtering
  */
-var TableFilteringExample = (function () {
+var TableFilteringExample = /** @class */ (function () {
     function TableFilteringExample() {
         this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
         this.dataSource = new MatTableDataSource(ELEMENT_DATA$1);
@@ -3560,7 +3582,7 @@ var ELEMENT_DATA$1 = [
 /**
  * \@title Table retrieving data through HTTP
  */
-var TableHttpExample = (function () {
+var TableHttpExample = /** @class */ (function () {
     function TableHttpExample(http) {
         this.http = http;
         this.displayedColumns = ['created', 'state', 'number', 'title'];
@@ -3627,7 +3649,7 @@ var TableHttpExample = (function () {
 /**
  * An example database that the data source uses to retrieve data for the table.
  */
-var ExampleHttpDao = (function () {
+var ExampleHttpDao = /** @class */ (function () {
     function ExampleHttpDao(http) {
         this.http = http;
     }
@@ -3658,7 +3680,7 @@ var ExampleHttpDao = (function () {
 /**
  * \@title Data table with sorting, pagination, and filtering.
  */
-var TableOverviewExample = (function () {
+var TableOverviewExample = /** @class */ (function () {
     function TableOverviewExample() {
         this.displayedColumns = ['id', 'name', 'progress', 'color'];
         // Create 100 users
@@ -3749,7 +3771,7 @@ var NAMES$1 = ['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
 /**
  * \@title Table with pagination
  */
-var TablePaginationExample = (function () {
+var TablePaginationExample = /** @class */ (function () {
     function TablePaginationExample() {
         this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
         this.dataSource = new MatTableDataSource(ELEMENT_DATA$2);
@@ -3819,7 +3841,7 @@ var ELEMENT_DATA$2 = [
 /**
  * \@title Table with selection
  */
-var TableSelectionExample = (function () {
+var TableSelectionExample = /** @class */ (function () {
     function TableSelectionExample() {
         this.displayedColumns = ['select', 'position', 'name', 'weight', 'symbol'];
         this.dataSource = new MatTableDataSource(ELEMENT_DATA$3);
@@ -3899,7 +3921,7 @@ var ELEMENT_DATA$3 = [
 /**
  * \@title Table with sorting
  */
-var TableSortingExample = (function () {
+var TableSortingExample = /** @class */ (function () {
     function TableSortingExample() {
         this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
         this.dataSource = new MatTableDataSource(ELEMENT_DATA$4);
@@ -3969,7 +3991,7 @@ var ELEMENT_DATA$4 = [
 /**
  * \@title Basic tabs
  */
-var TabsOverviewExample = (function () {
+var TabsOverviewExample = /** @class */ (function () {
     function TabsOverviewExample() {
     }
     TabsOverviewExample.decorators = [
@@ -3990,7 +4012,7 @@ var TabsOverviewExample = (function () {
 /**
  * \@title Complex Example
  */
-var TabsTemplateLabelExample = (function () {
+var TabsTemplateLabelExample = /** @class */ (function () {
     function TabsTemplateLabelExample() {
     }
     TabsTemplateLabelExample.decorators = [
@@ -4012,7 +4034,7 @@ var TabsTemplateLabelExample = (function () {
 /**
  * \@title Multi-row toolbar
  */
-var ToolbarMultirowExample = (function () {
+var ToolbarMultirowExample = /** @class */ (function () {
     function ToolbarMultirowExample() {
     }
     ToolbarMultirowExample.decorators = [
@@ -4034,7 +4056,7 @@ var ToolbarMultirowExample = (function () {
 /**
  * \@title Basic toolbar
  */
-var ToolbarOverviewExample = (function () {
+var ToolbarOverviewExample = /** @class */ (function () {
     function ToolbarOverviewExample() {
     }
     ToolbarOverviewExample.decorators = [
@@ -4055,7 +4077,7 @@ var ToolbarOverviewExample = (function () {
 /**
  * \@title Basic tooltip
  */
-var TooltipOverviewExample = (function () {
+var TooltipOverviewExample = /** @class */ (function () {
     function TooltipOverviewExample() {
     }
     TooltipOverviewExample.decorators = [
@@ -4076,7 +4098,7 @@ var TooltipOverviewExample = (function () {
 /**
  * \@title Tooltip with custom position
  */
-var TooltipPositionExample = (function () {
+var TooltipPositionExample = /** @class */ (function () {
     function TooltipPositionExample() {
         this.position = 'before';
     }
@@ -4331,15 +4353,15 @@ var EXAMPLE_COMPONENTS = {
         additionalFiles: null,
         selectorName: null
     },
-    'form-field-overview': {
-        title: 'Simple form field ',
-        component: FormFieldOverviewExample,
+    'form-field-label': {
+        title: 'Form field with label ',
+        component: FormFieldLabelExample,
         additionalFiles: null,
         selectorName: null
     },
-    'form-field-placeholder': {
-        title: 'Form field with placeholder ',
-        component: FormFieldPlaceholderExample,
+    'form-field-overview': {
+        title: 'Simple form field ',
+        component: FormFieldOverviewExample,
         additionalFiles: null,
         selectorName: null
     },
@@ -4601,6 +4623,12 @@ var EXAMPLE_COMPONENTS = {
         additionalFiles: null,
         selectorName: null
     },
+    'sidenav-autosize': {
+        title: 'Autosize sidenav',
+        component: SidenavAutosizeExample,
+        additionalFiles: null,
+        selectorName: null
+    },
     'sidenav-disable-close': {
         title: 'Sidenav with custom escape and backdrop click behavior ',
         component: SidenavDisableCloseExample,
@@ -4821,8 +4849,8 @@ var EXAMPLE_LIST = [
     MyTelInput, FormFieldCustomControlExample,
     FormFieldErrorExample,
     FormFieldHintExample,
+    FormFieldLabelExample,
     FormFieldOverviewExample,
-    FormFieldPlaceholderExample,
     FormFieldPrefixSuffixExample,
     FormFieldThemingExample,
     GridListDynamicExample,
@@ -4866,6 +4894,7 @@ var EXAMPLE_LIST = [
     SelectPanelClassExample,
     SelectResetExample,
     SelectValueBindingExample,
+    SidenavAutosizeExample,
     SidenavDisableCloseExample,
     SidenavDrawerOverviewExample,
     SidenavFixedExample,
@@ -4897,7 +4926,7 @@ var EXAMPLE_LIST = [
     TooltipOverviewExample,
     TooltipPositionExample,
 ];
-var ExampleModule = (function () {
+var ExampleModule = /** @class */ (function () {
     function ExampleModule() {
     }
     ExampleModule.decorators = [
@@ -4925,7 +4954,7 @@ var ExampleModule = (function () {
  * Example data
  *   with information about Component name, selector, files used in example, and path to examples
  */
-var ExampleData = (function () {
+var ExampleData = /** @class */ (function () {
     function ExampleData(example) {
         // TODO: figure out how do we get these variables.
         this.description = 'Some description for material';
@@ -4941,9 +4970,14 @@ var ExampleData = (function () {
             // TODO(tinayuangao): Do not hard-code extensions
             this.exampleFiles = ['html', 'ts', 'css']
                 .map(function (extension) { return example + "-example." + extension; });
+            var /** @type {?} */ exampleFilesSet = new Set(['html', 'ts', 'css'].map(function (extension) { return example + "-example." + extension; }));
             if (EXAMPLE_COMPONENTS[example].additionalFiles) {
-                this.exampleFiles = this.exampleFiles.concat(EXAMPLE_COMPONENTS[example].additionalFiles);
+                for (var _i = 0, _a = EXAMPLE_COMPONENTS[example].additionalFiles; _i < _a.length; _i++) {
+                    var file = _a[_i];
+                    exampleFilesSet.add(file);
+                }
             }
+            this.exampleFiles = Array.from(exampleFilesSet.values());
             this.selectorName = this.indexFilename = example + "-example";
             var /** @type {?} */ exampleName = example.replace(/(?:^\w|\b\w)/g, function (letter) { return letter.toUpperCase(); });
             if (EXAMPLE_COMPONENTS[example].title) {
@@ -4976,5 +5010,5 @@ var ExampleData = (function () {
  * Generated bundle index. Do not edit.
  */
 
-export { ExampleData, EXAMPLE_COMPONENTS, EXAMPLE_LIST, ExampleModule, ListOverviewExample, DatepickerOverviewExample, CardFancyExample, ToolbarMultirowExample, ButtonToggleOverviewExample, ExpansionOverviewExample, StepperOverviewExample, AutocompleteDisplayExample as ɵa, AutocompleteFilterExample as ɵb, AutocompleteOverviewExample as ɵc, AutocompleteSimpleExample as ɵd, ButtonOverviewExample as ɵe, ButtonToggleExclusiveExample as ɵf, ButtonTypesExample as ɵg, CardOverviewExample as ɵh, CdkTableBasicExample as ɵi, CheckboxConfigurableExample as ɵj, CheckboxOverviewExample as ɵk, ChipsInputExample as ɵl, ChipsOverviewExample as ɵm, ChipsStackedExample as ɵn, DatepickerApiExample as ɵo, DatepickerDisabledExample as ɵp, DatepickerEventsExample as ɵq, DatepickerFilterExample as ɵr, DatepickerFormatsExample as ɵt, MY_FORMATS as ɵs, DatepickerLocaleExample as ɵu, DatepickerMinMaxExample as ɵv, DatepickerMomentExample as ɵw, DatepickerStartViewExample as ɵx, DatepickerTouchExample as ɵy, DatepickerValueExample as ɵz, DialogContentExample as ɵba, DialogContentExampleDialog as ɵbb, DialogDataExample as ɵbc, DialogDataExampleDialog as ɵbd, DialogElementsExample as ɵbe, DialogElementsExampleDialog as ɵbf, DialogOverviewExample as ɵbg, DialogOverviewExampleDialog as ɵbh, ElevationOverviewExample as ɵbi, ExpansionStepsExample as ɵbj, FormFieldCustomControlExample as ɵbl, MyTelInput as ɵbk, FormFieldErrorExample as ɵbm, FormFieldHintExample as ɵbn, FormFieldOverviewExample as ɵbo, FormFieldPlaceholderExample as ɵbp, FormFieldPrefixSuffixExample as ɵbq, FormFieldThemingExample as ɵbr, GridListDynamicExample as ɵbs, GridListOverviewExample as ɵbt, IconOverviewExample as ɵbu, IconSvgExample as ɵbv, InputAutosizeTextareaExample as ɵbw, InputClearableExample as ɵbx, InputErrorStateMatcherExample as ɵby, InputErrorsExample as ɵbz, InputFormExample as ɵca, InputHintExample as ɵcb, InputOverviewExample as ɵcc, InputPrefixSuffixExample as ɵcd, ListSectionsExample as ɵce, ListSelectionExample as ɵcf, ExampleMaterialModule as ɵej, MenuIconsExample as ɵcg, MenuOverviewExample as ɵch, NestedMenuExample as ɵci, PaginatorConfigurableExample as ɵcj, PaginatorOverviewExample as ɵck, ProgressBarBufferExample as ɵcl, ProgressBarConfigurableExample as ɵcm, ProgressBarDeterminateExample as ɵcn, ProgressBarIndeterminateExample as ɵco, ProgressBarQueryExample as ɵcp, ProgressSpinnerConfigurableExample as ɵcq, ProgressSpinnerOverviewExample as ɵcr, RadioNgModelExample as ɵcs, RadioOverviewExample as ɵct, SelectCustomTriggerExample as ɵcu, SelectDisabledExample as ɵcv, SelectErrorStateMatcherExample as ɵcw, SelectFormExample as ɵcx, SelectHintErrorExample as ɵcy, SelectMultipleExample as ɵcz, SelectNoRippleExample as ɵda, SelectOptgroupExample as ɵdb, SelectOverviewExample as ɵdc, SelectPanelClassExample as ɵdd, SelectResetExample as ɵde, SelectValueBindingExample as ɵdf, SidenavDisableCloseExample as ɵdg, SidenavDrawerOverviewExample as ɵdh, SidenavFixedExample as ɵdi, SidenavModeExample as ɵdj, SidenavOpenCloseExample as ɵdk, SidenavOverviewExample as ɵdl, SidenavPositionExample as ɵdm, SidenavResponsiveExample as ɵdn, SlideToggleConfigurableExample as ɵdo, SlideToggleFormsExample as ɵdp, SlideToggleOverviewExample as ɵdq, SliderConfigurableExample as ɵdr, SliderOverviewExample as ɵds, PizzaPartyComponent as ɵdu, SnackBarComponentExample as ɵdt, SnackBarOverviewExample as ɵdv, SortOverviewExample as ɵdw, TableBasicExample as ɵdx, TableFilteringExample as ɵdy, TableHttpExample as ɵdz, TableOverviewExample as ɵea, TablePaginationExample as ɵeb, TableSelectionExample as ɵec, TableSortingExample as ɵed, TabsOverviewExample as ɵee, TabsTemplateLabelExample as ɵef, ToolbarOverviewExample as ɵeg, TooltipOverviewExample as ɵeh, TooltipPositionExample as ɵei };
+export { ExampleData, EXAMPLE_COMPONENTS, EXAMPLE_LIST, ExampleModule, ListOverviewExample, DatepickerOverviewExample, CardFancyExample, ToolbarMultirowExample, ButtonToggleOverviewExample, ExpansionOverviewExample, StepperOverviewExample, AutocompleteDisplayExample as ɵa, AutocompleteFilterExample as ɵb, AutocompleteOverviewExample as ɵc, AutocompleteSimpleExample as ɵd, ButtonOverviewExample as ɵe, ButtonToggleExclusiveExample as ɵf, ButtonTypesExample as ɵg, CardOverviewExample as ɵh, CdkTableBasicExample as ɵi, CheckboxConfigurableExample as ɵj, CheckboxOverviewExample as ɵk, ChipsInputExample as ɵl, ChipsOverviewExample as ɵm, ChipsStackedExample as ɵn, DatepickerApiExample as ɵo, DatepickerDisabledExample as ɵp, DatepickerEventsExample as ɵq, DatepickerFilterExample as ɵr, DatepickerFormatsExample as ɵt, MY_FORMATS as ɵs, DatepickerLocaleExample as ɵu, DatepickerMinMaxExample as ɵv, DatepickerMomentExample as ɵw, DatepickerStartViewExample as ɵx, DatepickerTouchExample as ɵy, DatepickerValueExample as ɵz, DialogContentExample as ɵba, DialogContentExampleDialog as ɵbb, DialogDataExample as ɵbc, DialogDataExampleDialog as ɵbd, DialogElementsExample as ɵbe, DialogElementsExampleDialog as ɵbf, DialogOverviewExample as ɵbg, DialogOverviewExampleDialog as ɵbh, ElevationOverviewExample as ɵbi, ExpansionStepsExample as ɵbj, FormFieldCustomControlExample as ɵbl, MyTelInput as ɵbk, FormFieldErrorExample as ɵbm, FormFieldHintExample as ɵbn, FormFieldLabelExample as ɵbo, FormFieldOverviewExample as ɵbp, FormFieldPrefixSuffixExample as ɵbq, FormFieldThemingExample as ɵbr, GridListDynamicExample as ɵbs, GridListOverviewExample as ɵbt, IconOverviewExample as ɵbu, IconSvgExample as ɵbv, InputAutosizeTextareaExample as ɵbw, InputClearableExample as ɵbx, InputErrorStateMatcherExample as ɵby, InputErrorsExample as ɵbz, InputFormExample as ɵca, InputHintExample as ɵcb, InputOverviewExample as ɵcc, InputPrefixSuffixExample as ɵcd, ListSectionsExample as ɵce, ListSelectionExample as ɵcf, ExampleMaterialModule as ɵek, MenuIconsExample as ɵcg, MenuOverviewExample as ɵch, NestedMenuExample as ɵci, PaginatorConfigurableExample as ɵcj, PaginatorOverviewExample as ɵck, ProgressBarBufferExample as ɵcl, ProgressBarConfigurableExample as ɵcm, ProgressBarDeterminateExample as ɵcn, ProgressBarIndeterminateExample as ɵco, ProgressBarQueryExample as ɵcp, ProgressSpinnerConfigurableExample as ɵcq, ProgressSpinnerOverviewExample as ɵcr, RadioNgModelExample as ɵcs, RadioOverviewExample as ɵct, SelectCustomTriggerExample as ɵcu, SelectDisabledExample as ɵcv, SelectErrorStateMatcherExample as ɵcw, SelectFormExample as ɵcx, SelectHintErrorExample as ɵcy, SelectMultipleExample as ɵcz, SelectNoRippleExample as ɵda, SelectOptgroupExample as ɵdb, SelectOverviewExample as ɵdc, SelectPanelClassExample as ɵdd, SelectResetExample as ɵde, SelectValueBindingExample as ɵdf, SidenavAutosizeExample as ɵdg, SidenavDisableCloseExample as ɵdh, SidenavDrawerOverviewExample as ɵdi, SidenavFixedExample as ɵdj, SidenavModeExample as ɵdk, SidenavOpenCloseExample as ɵdl, SidenavOverviewExample as ɵdm, SidenavPositionExample as ɵdn, SidenavResponsiveExample as ɵdo, SlideToggleConfigurableExample as ɵdp, SlideToggleFormsExample as ɵdq, SlideToggleOverviewExample as ɵdr, SliderConfigurableExample as ɵds, SliderOverviewExample as ɵdt, PizzaPartyComponent as ɵdv, SnackBarComponentExample as ɵdu, SnackBarOverviewExample as ɵdw, SortOverviewExample as ɵdx, TableBasicExample as ɵdy, TableFilteringExample as ɵdz, TableHttpExample as ɵea, TableOverviewExample as ɵeb, TablePaginationExample as ɵec, TableSelectionExample as ɵed, TableSortingExample as ɵee, TabsOverviewExample as ɵef, TabsTemplateLabelExample as ɵeg, ToolbarOverviewExample as ɵeh, TooltipOverviewExample as ɵei, TooltipPositionExample as ɵej };
 //# sourceMappingURL=material-examples.es5.js.map

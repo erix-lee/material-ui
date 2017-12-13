@@ -5,8 +5,6 @@ export interface DocItem {
   name: string;
   packageName?: string;
   examples?: string[];
-  description?:string;
-  icon?:string;
 }
 
 export interface DocCategory {
@@ -29,14 +27,12 @@ const DOCS: {[key: string]: DocCategory[]} = {
     {
       id: 'forms',
       name: 'Form Controls',
-      summary:'表单控件',
       items: [
-        {id: 'autocomplete', name: 'Autocomplete', description:'自动完成', examples: ['autocomplete-overview']},
-        {id: 'checkbox', name: 'Checkbox',description:'复选框', examples: ['checkbox-configurable']},
+        {id: 'autocomplete', name: 'Autocomplete', examples: ['autocomplete-overview']},
+        {id: 'checkbox', name: 'Checkbox', examples: ['checkbox-configurable']},
         {
           id: 'datepicker',
           name: 'Datepicker',
-          description:'日期选择器',
           examples: [
             'datepicker-overview',
             'datepicker-start-view',
@@ -58,7 +54,7 @@ const DOCS: {[key: string]: DocCategory[]} = {
           name: 'Form field',
           examples: [
             'form-field-overview',
-            'form-field-placeholder',
+            'form-field-label',
             'form-field-hint',
             'form-field-error',
             'form-field-prefix-suffix',
@@ -109,7 +105,21 @@ const DOCS: {[key: string]: DocCategory[]} = {
       summary: 'Sidenavs, toolbars, menus',
       items: [
         {id: 'menu', name: 'Menu', examples: ['menu-icons']},
-        {id: 'sidenav', name: 'Sidenav', examples: ['sidenav-fab']},
+        {
+          id: 'sidenav',
+          name: 'Sidenav',
+          examples: [
+            'sidenav-overview',
+            'sidenav-drawer-overview',
+            'sidenav-position',
+            'sidenav-open-close',
+            'sidenav-mode',
+            'sidenav-disable-close',
+            'sidenav-autosize',
+            'sidenav-fixed',
+            'sidenav-responsive'
+          ]
+        },
         {id: 'toolbar', name: 'Toolbar', examples: ['toolbar-multirow']},
       ]
     },
@@ -153,8 +163,8 @@ const DOCS: {[key: string]: DocCategory[]} = {
       name: 'Data table',
       items: [
         {id: 'table', name: 'Table', examples: [
-          'table-filtering', 
-          'table-pagination', 
+          'table-filtering',
+          'table-pagination',
           'table-sorting',
           'table-http',
           'table-overview',
@@ -169,21 +179,21 @@ const DOCS: {[key: string]: DocCategory[]} = {
       id: 'component-composition',
       name: 'Common Behaviors',
       items: [
-        {id: 'a11y', name: 'Accessibility', icon:'accessibility', examples: []},
-        {id: 'observers', name: 'Observers', icon:'remove_red_eye',examples: []},
-        {id: 'layout', name: 'Layout', icon:'view_compact',examples: []},
-        {id: 'overlay', name: 'Overlay', icon:'texture',examples: []},
-        {id: 'portal', name: 'Portal',icon:'widgets',examples: []},
-        {id: 'bidi', name: 'Bidirectionality',icon:'directions', examples: []},
-        {id: 'scrolling', name: 'Scrolling', icon:'vertical_align_center',examples: []},
+        {id: 'a11y', name: 'Accessibility', examples: []},
+        {id: 'observers', name: 'Observers', examples: []},
+        {id: 'layout', name: 'Layout', examples: []},
+        {id: 'overlay', name: 'Overlay', examples: []},
+        {id: 'portal', name: 'Portal', examples: []},
+        {id: 'bidi', name: 'Bidirectionality', examples: []},
+        {id: 'scrolling', name: 'Scrolling', examples: []},
       ]
     },
     {
       id: 'components',
       name: 'Components',
       items: [
-        {id: 'table', name: 'Table', icon:'view_column',examples: []},
-        {id: 'stepper', name: 'Stepper',icon:'done_all', examples: []},
+        {id: 'table', name: 'Table', examples: []},
+        {id: 'stepper', name: 'Stepper', examples: []},
 
       ]
     },
@@ -229,7 +239,6 @@ export class DocumentationItems {
   }
 
   getItemById(id: string, section: string): DocItem {
-    //console.info(section);
     const sectionLookup = section == 'cdk' ? 'cdk' : 'material';
     return ALL_DOCS.find(doc => doc.id === id && doc.packageName == sectionLookup);
   }

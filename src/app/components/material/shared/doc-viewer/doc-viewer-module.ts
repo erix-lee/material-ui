@@ -24,7 +24,7 @@ import {CopierService} from '../copier/copier.service';
     MatSnackBarModule,
     MatTabsModule,
     CommonModule,
-    PortalModule 
+    PortalModule
   ],
   providers: [CopierService],
   declarations: [DocViewer, ExampleViewer, HeaderLink],

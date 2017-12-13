@@ -42,8 +42,8 @@ import { ExpansionStepsExample } from './expansion-steps/expansion-steps-example
 import { MyTelInput, FormFieldCustomControlExample } from './form-field-custom-control/form-field-custom-control-example';
 import { FormFieldErrorExample } from './form-field-error/form-field-error-example';
 import { FormFieldHintExample } from './form-field-hint/form-field-hint-example';
+import { FormFieldLabelExample } from './form-field-label/form-field-label-example';
 import { FormFieldOverviewExample } from './form-field-overview/form-field-overview-example';
-import { FormFieldPlaceholderExample } from './form-field-placeholder/form-field-placeholder-example';
 import { FormFieldPrefixSuffixExample } from './form-field-prefix-suffix/form-field-prefix-suffix-example';
 import { FormFieldThemingExample } from './form-field-theming/form-field-theming-example';
 import { GridListDynamicExample } from './grid-list-dynamic/grid-list-dynamic-example';
@@ -87,6 +87,7 @@ import { SelectOverviewExample } from './select-overview/select-overview-example
 import { SelectPanelClassExample } from './select-panel-class/select-panel-class-example';
 import { SelectResetExample } from './select-reset/select-reset-example';
 import { SelectValueBindingExample } from './select-value-binding/select-value-binding-example';
+import { SidenavAutosizeExample } from './sidenav-autosize/sidenav-autosize-example';
 import { SidenavDisableCloseExample } from './sidenav-disable-close/sidenav-disable-close-example';
 import { SidenavDrawerOverviewExample } from './sidenav-drawer-overview/sidenav-drawer-overview-example';
 import { SidenavFixedExample } from './sidenav-fixed/sidenav-fixed-example';
@@ -346,15 +347,15 @@ export declare const EXAMPLE_COMPONENTS: {
         additionalFiles: null;
         selectorName: null;
     };
-    'form-field-overview': {
+    'form-field-label': {
         title: string;
-        component: typeof FormFieldOverviewExample;
+        component: typeof FormFieldLabelExample;
         additionalFiles: null;
         selectorName: null;
     };
-    'form-field-placeholder': {
+    'form-field-overview': {
         title: string;
-        component: typeof FormFieldPlaceholderExample;
+        component: typeof FormFieldOverviewExample;
         additionalFiles: null;
         selectorName: null;
     };
@@ -616,6 +617,12 @@ export declare const EXAMPLE_COMPONENTS: {
         additionalFiles: null;
         selectorName: null;
     };
+    'sidenav-autosize': {
+        title: string;
+        component: typeof SidenavAutosizeExample;
+        additionalFiles: null;
+        selectorName: null;
+    };
     'sidenav-disable-close': {
         title: string;
         component: typeof SidenavDisableCloseExample;
@@ -797,6 +804,6 @@ export declare const EXAMPLE_COMPONENTS: {
         selectorName: null;
     };
 };
-export declare const EXAMPLE_LIST: (typeof DatepickerLocaleExample | typeof DialogContentExample | typeof DialogOverviewExampleDialog | typeof MyTelInput | typeof FormFieldPlaceholderExample | typeof IconSvgExample | typeof SidenavResponsiveExample | typeof SlideToggleFormsExample | typeof SnackBarOverviewExample | typeof StepperOverviewExample | typeof TableHttpExample)[];
+export declare const EXAMPLE_LIST: (typeof DatepickerLocaleExample | typeof DialogContentExample | typeof DialogOverviewExampleDialog | typeof MyTelInput | typeof FormFieldLabelExample | typeof IconSvgExample | typeof SidenavResponsiveExample | typeof SlideToggleFormsExample | typeof SnackBarOverviewExample | typeof StepperOverviewExample | typeof TableHttpExample)[];
 export declare class ExampleModule {
 }
