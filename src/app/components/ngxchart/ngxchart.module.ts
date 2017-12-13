@@ -12,7 +12,7 @@ import { TimelineFilterBarChartComponent } from './timeline-filter-bar-chart/tim
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { ComboChartComponent, ComboSeriesVerticalComponent } from './combo-chart';
-import { MatButtonModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,MatIconModule,MatSelectModule} from '@angular/material';
+import { MatCardModule, MatButtonModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,MatIconModule,MatSelectModule} from '@angular/material';
 
 import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
@@ -31,7 +31,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     NgxChartsModule,
-    FormsModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,MatIconModule,MatButtonModule,MatSelectModule,
+    FormsModule,MatSliderModule,MatFormFieldModule ,MatDatepickerModule,MatInputModule,MatNativeDateModule,MatIconModule,MatButtonModule,MatSelectModule,MatCardModule,
     CovalentCommonModule, CovalentLayoutModule, CovalentMediaModule, CovalentExpansionPanelModule, CovalentFileModule,
     CovalentStepsModule, CovalentLoadingModule, CovalentDialogsModule, CovalentSearchModule, CovalentPagingModule,
     CovalentNotificationsModule, CovalentMenuModule, CovalentChipsModule, CovalentDataTableModule, CovalentJsonFormatterModule,

@@ -522,8 +522,8 @@ export class NgxchartComponent implements OnInit {
     this.yAxisLabel = 'GDP Per Capita';
     this.xAxisLabel = 'Country';
 
-    this.width = 700;
-    this.height = 300;
+    //this.width = 700;
+    //this.height = 300;
 
     Object.assign(this, this.chart.defaults);
 
