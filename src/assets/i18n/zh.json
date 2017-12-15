@@ -1,14 +1,14 @@
 {
-  "DEMO_TAB": "Demo",
-  "CODE_TAB": "Codigo",
+  "DEMO_TAB": "示例",
+  "CODE_TAB": "代码",
   "DEMO_BASIC": {
-    "TITLE": "Ejemplo basico con ngx-translate",
-    "SUBTITLE": "i18n con ngx-translate",
-    "PIPE_MESSAGE": "Este es un mensaje traducido usando la pipa [translate].",
-    "DIRECTIVE_MESSAGE": "Este es un mensaje traducido usando el directivo [translate]."
+    "TITLE": "标题",
+    "SUBTITLE": "子标题",
+    "PIPE_MESSAGE": "PIPE管道消息 [translate].",
+    "DIRECTIVE_MESSAGE": "DIRECTIVE消息  [translate]."
   },
   "DEMO_ONE": {
-    "TITLE": "Mas ejemplos con ngx-translate",
+    "TITLE": "示例",
     "SUBTITLE": "i18n con ngx-translate + [ngPlural] de Angular",
     "SELECT": {
       "PLACEHOLDER": "Seleccione un valor",

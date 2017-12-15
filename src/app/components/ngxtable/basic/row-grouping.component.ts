@@ -31,7 +31,7 @@ import { NgStyle } from '@angular/common';
           <ng-template let-group="group" let-expanded="expanded" ngx-datatable-group-header-template>
             <div style="padding-left:5px;">
               <a
-                href="#"
+               
                 [class.datatable-icon-right]="!expanded"
                 [class.datatable-icon-down]="expanded"
                 title="Expand/Collapse Group"

@@ -4,8 +4,9 @@ import { slideInDownAnimation } from '../../../app.animations';
 @Component({
   selector: 'basic-auto-demo',
   template: `
-    <div>
-      <h3>
+    <div class="mat-card">
+    <section  class="pad">
+       <h3>
         Fluid Row Heights 
         <small>
           <a href="https://github.com/swimlane/ngx-datatable/blob/master/demo/basic/basic-auto.component.ts" target="_blank">
@@ -13,6 +14,7 @@ import { slideInDownAnimation } from '../../../app.animations';
           </a>
         </small>
       </h3>
+      </section>
       <ngx-datatable 
         class="dark"
         [rows]="rows"

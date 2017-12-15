@@ -10,7 +10,7 @@ import { getDirection } from './utilities/direction';
 import { TdLoadingService } from '@covalent/core';
 enableProdMode();
 @Component({
-  selector: 'docs-covalent',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
@@ -44,7 +44,7 @@ export class DocsAppComponent implements OnInit {
     title: 'Documentation',
   }, {
     icon: 'picture_in_picture',
-    route: 'components',
+    route: 'covalent',
     title: 'Components & Addons',
   }, {
     icon: 'picture_in_picture',

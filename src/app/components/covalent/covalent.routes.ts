@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { ComponentsComponent } from './components.component';
-import { ComponentsOverviewComponent }  from './overview/overview.component';
+import { CovalentComponent } from './covalent.component';
+import { CovalentOverviewComponent }  from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
@@ -31,7 +31,7 @@ import { NgxTranslateDemoComponent } from './ngx-translate/ngx-translate.compone
 
 const routes: Routes = [{
   children: [{
-      component: ComponentsOverviewComponent,
+      component:CovalentOverviewComponent,
       path: '',
     }, {
       component: HighlightDemoComponent,
@@ -113,8 +113,8 @@ const routes: Routes = [{
       path: 'ngx-translate',
     },
   ],
-  component: ComponentsComponent,
-  path: 'components',
+  component: CovalentComponent,
+  path: 'covalent',
 }];
 
-export const componentsRoutes: any = RouterModule.forChild(routes);
+export const covalentRoutes: any = RouterModule.forChild(routes);

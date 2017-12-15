@@ -1,0 +1,35 @@
+
+$mat-light-theme-background: (
+  status-bar: 
+  app-bar:    
+  background:  
+  hover:     
+  card:       
+  dialog:      
+  disabled-button:  
+  raised-button:  
+  focused-button: 
+  selected-button:  
+  selected-disabled-button: 
+  disabled-button-toggle: 
+  unselected-chip:  
+  disabled-list-option: 
+
+
+// Foreground palette for light themes.
+
+  base:            
+  divider:         
+  dividers:        
+  disabled:         
+  disabled-button:  
+  disabled-text:    
+  hint-text:        
+  secondary-text:    
+  icon:             
+  icons:           
+  text:            
+  slider-min:     
+  slider-off:      
+  slider-off-active: 
+);

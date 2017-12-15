@@ -34,7 +34,7 @@ const routes: Routes = [{
     path: '', data: { preload: false, }, loadChildren: './components/material/material.module#MaterialModule',
   }, {
     // preload: true loads the module immediately
-    path: '', data: { preload:false, }, loadChildren: './components/covalent/components.module#ComponentsModule',
+    path: '', data: { preload:false, }, loadChildren: './components/covalent/covalent.module#CovalentModule',
   }
 ];
 

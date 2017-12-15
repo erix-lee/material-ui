@@ -1,1 +1,1 @@
-export { ComponentsModule } from './components.module';
+export { CovalentModule } from './covalent.module';

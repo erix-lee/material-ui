@@ -1,13 +1,15 @@
 
 @import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme';
-$mdi-font-path:'~mdi/fonts/';
+
 // (optional) Additional themes
 @import '~@covalent/markdown/markdown-theme'; 
 @import '~@covalent/highlight/highlight-theme';
 
+
+@import 'datatable';
 // Plus imports for other components in your app.
-@import '~mdi/scss/materialdesignicons.scss';
+
 // Include the base styles for Angular Material core. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 @include mat-core();
@@ -17,6 +19,8 @@ $mdi-font-path:'~mdi/fonts/';
 
 // Include material icons
 $mat-font-url: '~@covalent/core/common/styles/font/';
+$mdi-font-path:'~mdi/fonts/';
+@import '~mdi/scss/materialdesignicons.scss';
 
 
 @include covalent-material-icons();
@@ -85,7 +89,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
 @include covalent-theme($theme);
 @include covalent-markdown-theme($theme);
 @include covalent-highlight-theme(); // OR @import '~highlight.js/styles/vs.css';
-
+@include datatable-theme($theme);
 // Alt theme
 .theme-alt {
     $primary-alt: mat-palette($mat-orange, 800);
@@ -118,7 +122,7 @@ $theme: mat-light-theme($primary, $accent, $warn);
     $theme-dark: mat-dark-theme($primary-dark, $accent-dark, $warn-dark);
     @include angular-material-theme($theme-dark);
     @include covalent-theme($theme-dark);
-
+    @include datatable-theme($theme-dark);
     .tc-primary {
         color: mat-color($primary-dark);
     }

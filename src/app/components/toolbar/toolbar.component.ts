@@ -12,8 +12,8 @@ import { getDirection, setDirection } from '../../utilities/direction';
 
 @Component({
   selector: 'td-toolbar',
-  templateUrl: '././toolbar.component.html',
-  styleUrls: ['././toolbar.component.scss'],
+  templateUrl: './toolbar.component.html',
+  styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
   updates: Object[] = [{

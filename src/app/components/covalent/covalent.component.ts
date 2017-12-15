@@ -5,12 +5,12 @@ import { TdMediaService } from '@covalent/core';
 import { fadeAnimation } from '../../app.animations';
 
 @Component({
-  selector: 'app-components',
-  styleUrls: ['./components.component.scss'],
-  templateUrl: './components.component.html',
+  selector: 'app-covalent',
+  styleUrls: ['./covalent.component.scss'],
+  templateUrl: './covalent.component.html',
   animations: [fadeAnimation],
 })
-export class ComponentsComponent {
+export class CovalentComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;

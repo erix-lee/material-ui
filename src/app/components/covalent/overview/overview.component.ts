@@ -8,7 +8,7 @@ import { slideInDownAnimation } from '../../../app.animations';
   templateUrl: './overview.component.html',
   animations: [slideInDownAnimation],
 })
-export class ComponentsOverviewComponent {
+export class CovalentOverviewComponent {
 
   @HostBinding('@routeAnimation') routeAnimation: boolean = true;
   @HostBinding('class.td-route-animation') classAnimation: boolean = true;

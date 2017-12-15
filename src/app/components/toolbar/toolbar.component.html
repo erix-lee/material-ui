@@ -4,19 +4,21 @@
 -->
 <div layout="row" layout-align="end center" flex>
   <span flex></span>
-  <nav  class=" text-upper text-sm" layout="row">
-    <a class="push-right text-nodecoration" [routerLink]="['/docs']" [routerLinkActive]="['active']">文档</a>
-    <a class="push-right text-nodecoration" [routerLink]="['/components']" [routerLinkActive]="['active']">高级组件</a>
-    <a class="push-right text-nodecoration" [routerLink]="['/material']" [routerLinkActive]="['active']"><span hide-md>Material</span>组件</a>
-    <a class="push-right text-nodecoration" [routerLink]="['/ngxtable']" [routerLinkActive]="['active']">表格</a>
-    <a class="push-right text-nodecoration" [routerLink]="['/ngxchart']" [routerLinkActive]="['active']">图表</a>
-    <a class="push-right text-nodecoration" [routerLink]="['/layouts']" [routerLinkActive]="['active']">布局</a>
-    <a class="push-right text-nodecoration" [routerLink]="['/style-guide']" [routerLinkActive]="['active']">风格<span hide-md>指南</span>
-    </a>
-    <a class="push-right text-nodecoration" [routerLink]="['/design-patterns']" [routerLinkActive]="['active']">
-      <span hide-md>设计</span>模式</a>
-    <a class="push-right text-nodecoration" [routerLink]="['/templates']" [routerLinkActive]="['active']">模板</a>
-  </nav>
+
+  <a mat-button [routerLink]="['/docs']" [routerLinkActive]="['active']" matTooltip="文档">文档</a>
+  <a mat-button [routerLink]="['/covalent']" [routerLinkActive]="['active']">Covalent<span hide-md>组件</span></a>
+  <a mat-button [routerLink]="['/material']" [routerLinkActive]="['active']">
+    Material<span hide-md>组件</span></a>
+  <a mat-button [routerLink]="['/ngxtable']" [routerLinkActive]="['active']">表格</a>
+  <a mat-button [routerLink]="['/ngxchart']" [routerLinkActive]="['active']">图表</a>
+  <a mat-button [routerLink]="['/layouts']" [routerLinkActive]="['active']">布局</a>
+  <a mat-button [routerLink]="['/style-guide']" [routerLinkActive]="['active']">风格
+    <span hide-md>指南</span>
+  </a>
+  <a mat-button [routerLink]="['/design-patterns']" [routerLinkActive]="['active']">
+    <span hide-md>设计</span>模式</a>
+  <a mat-button [routerLink]="['/templates']" [routerLinkActive]="['active']">模板</a>
+
   <button class="overflow-visible" mat-icon-button [matMenuTriggerFor]="notificationsMenu">
     <td-notification-count color="accent" [notifications]="updates.length + 1">
       <mat-icon>notifications</mat-icon>

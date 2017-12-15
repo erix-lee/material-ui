@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { componentsRoutes } from './components.routes';
+import { covalentRoutes } from './covalent.routes';
 
-import { ComponentsComponent } from './components.component';
-import { ComponentsOverviewComponent }  from './overview/overview.component';
+import { CovalentComponent } from './covalent.component';
+import { CovalentOverviewComponent }  from './overview/overview.component';
 import { HighlightDemoComponent } from './highlight/highlight.component';
 import { StepsDemoComponent } from './steps/steps.component';
 import { ExpansionPanelDemoComponent } from './expansion-panel/expansion-panel.component';
@@ -57,8 +57,8 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [
-    ComponentsComponent,
-    ComponentsOverviewComponent,
+    CovalentComponent,
+    CovalentOverviewComponent,
     HighlightDemoComponent,
     StepsDemoComponent,
     ExpansionPanelDemoComponent,
@@ -132,8 +132,8 @@ import { ToolbarModule } from '../../components/toolbar/toolbar.module';
     DocumentationToolsModule,
     NgxChartsModule,
     TranslateModule,
-    componentsRoutes,
+    covalentRoutes,
     ToolbarModule,
   ],
 })
-export class ComponentsModule {}
+export class CovalentModule {}
